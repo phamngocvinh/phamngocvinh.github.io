@@ -19,6 +19,11 @@ a {
   text-decoration: none;
 }
 
+.red-link {
+  color: #ebcb8b;
+  text-decoration: none;
+}
+
 .clearfix::after, .clearfix::before {
   content: " ";
   display: table;
@@ -213,7 +218,7 @@ a {
   }
 }
 .experience h3.experience-title {
-  color: #66cc99;
+  color: #81a1c1;
   text-align: left;
   text-transform: uppercase;
   font-size: 1.2em;
@@ -269,7 +274,7 @@ a {
   width: 50%;
   float: left;
   text-align: left;
-  color: #9099a0;
+  color: #eceff4;
   font-weight: 300;
   margin-bottom: 20px;
 }
@@ -282,7 +287,7 @@ a {
   padding-right: 8%;
 }
 .section-wrapper h3.section-title {
-  color: #66cc99;
+  color: #81a1c1;
   text-align: left;
   text-transform: uppercase;
   font-size: 1.2em;
@@ -304,7 +309,7 @@ a {
 .section-wrapper .skill-percentage::before {
   content: "";
   height: 6px;
-  background: #88c0d0;
+  background: #a3be8c;
   position: absolute;
   margin-top: 3px;
   bottom: 0;
