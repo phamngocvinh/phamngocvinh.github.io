@@ -7,11 +7,12 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="./style.css">
-
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <div class="resume-wrapper">
     <section class="profile section-padding">
@@ -28,7 +29,6 @@
                     result="cm" />
                 </filter>
               </defs>
-
 
               <g filter="url(#goo)">
 
@@ -52,12 +52,11 @@
           <div class="clearfix"></div>
         </div>
         <div class="name-wrapper">
-          <h1>Pham Ngoc<br />Vinh</h1><!-- YOUR NAME AND LAST NAME  -->
+          <h1>Pham Ngoc<br />Vinh</h1>
         </div>
         <div class="clearfix"></div>
         <div class="contact-presentation">
-          <!-- YOUR PRESENTATION RESUME  -->
-          <p>A passionate Software Engineer with 7+ years of experience in a Japanese Company</p>
+          <p id="introduce"></p>
         </div>
         <div class="contact-info clearfix">
           <ul class="list-titles">
@@ -67,22 +66,26 @@
             <li>Home</li>
           </ul>
           <ul class="list-content ">
-            <li>+84 862 330 759</li> <!-- YOUR PHONE NUMBER  -->
-            <li><a href="mailto:phamngocvinh@live.com">phamngocvinh@live.com</a></li> <!-- YOUR EMAIL -->
+            <li>+84 862 330 759</li>
+            <li><a href="mailto:phamngocvinh@live.com">phamngocvinh@live.com</a></li>
             <li><a href="http://phamngocvinh.github.io" target="_blank">phamngocvinh.github.io</a></li>
-            <!-- YOUR WEBSITE  -->
-            <li>Ho Chi Minh, VN</li> <!-- YOUR STATE AND COUNTRY  -->
+
+            <li>Ho Chi Minh, VN</li>
           </ul>
         </div>
         <br>
         <div class="contact-education clearfix">
           <ul class="list-titles">
-            <li>Education<br>&nbsp;</li>
+            <li>Education</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
             <li>Japanese</li>
             <li>English</li>
           </ul>
           <ul class="list-content">
-            <li>Bachelor Degree in Software Engineering at Hoa Sen University</a></li>
+            <li>Bachelor Degree in</li>
+            <li>Software Engineering at</li>
+            <li>Hoa Sen University</li>
             <li>JLPT N3</li>
             <li>TOEIC 810</li>
           </ul>
@@ -111,49 +114,49 @@
 
         <div class="experience-wrapper">
           <div class="company-wrapper clearfix">
-            <div class="experience-title">Aureole IT</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-            <div class="time">Mar 2015 - Now</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+            <div class="experience-title">Aureole IT</div>
+            <div class="time">Mar 2015 - Now</div>
           </div>
 
           <div class="job-wrapper clearfix">
-            <div class="experience-title">Leader</div> <!-- JOB TITLE  -->
+            <div class="experience-title">Leader</div>
             <div class="company-description">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in,
-                dignissim magna.</p> <!-- JOB DESCRIPTION  -->
+                dignissim magna.</p>
             </div>
           </div>
 
           <div class="company-wrapper clearfix">
-            <div class="experience-title">Hokuriku Computer Services</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-            <div class="time">Jan 2016 - Dec 2018</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+            <div class="experience-title">Hokuriku Computer Services</div>
+            <div class="time">Jan 2016 - Dec 2018</div>
           </div>
 
           <div class="job-wrapper clearfix">
-            <div class="experience-title">Software Engineer</div> <!-- JOB TITLE  -->
+            <div class="experience-title">Software Engineer</div>
             <div class="company-description">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in,
-                dignissim magna.</p> <!-- JOB DESCRIPTION  -->
+                dignissim magna.</p>
             </div>
           </div>
 
           <div class="company-wrapper clearfix">
-            <div class="experience-title">Mitani Sangyo</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-            <div class="time">Jul 2019 - Apr 2021</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+            <div class="experience-title">Mitani Sangyo</div>
+            <div class="time">Jul 2019 - Apr 2021</div>
           </div>
 
           <div class="job-wrapper clearfix">
-            <div class="experience-title">Software Engineer</div> <!-- JOB TITLE  -->
+            <div class="experience-title">Software Engineer</div>
             <div class="company-description">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in,
-                dignissim magna.</p> <!-- JOB DESCRIPTION  -->
+                dignissim magna.</p>
             </div>
           </div>
 
         </div>
-        <!--Skill experience-->
+
 
         <div class="section-wrapper clearfix">
-          <h3 class="section-title">Skills</h3> <!-- YOUR SET OF SKILLS  -->
+          <h3 class="section-title">Skills</h3>
           <ul>
             <li class="skill-percentage">Java</li>
             <li class="skill-percentage">C#</li>
@@ -166,7 +169,7 @@
         </div>
 
         <div class="section-wrapper clearfix">
-          <h3 class="section-title">Side Projects</h3> <!-- DESCRIPTION OF YOUR HOBBIES -->
+          <h3 class="section-title">Side Projects</h3>
           <ul>
             <li class=""><a class="red-link" href="https://github.com/phamngocvinh/automatic-engine"
                 target="_blank">・Automatic Engine</a>
@@ -190,13 +193,11 @@
                 target="_blank">・and more...</a></li>
           </ul>
         </div>
-
       </div>
     </section>
-
     <div class="clearfix"></div>
   </div>
-
+  <script src="./script.js"></script>
 </body>
 
 </html>
