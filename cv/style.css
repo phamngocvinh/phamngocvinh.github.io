@@ -26,6 +26,10 @@ a {
   white-space: pre-wrap;
 }
 
+.nord-bg {
+  background-color: #2e3440;
+}
+
 .red-link {
   color: #ebcb8b;
   text-decoration: none;
