@@ -61,6 +61,7 @@ a {
   width: 40%;
   float: left;
   color: #4c566a;
+  padding-top: 10px !important;
 }
 @media (max-width: 850px) {
   .profile {
