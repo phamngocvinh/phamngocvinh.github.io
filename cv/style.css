@@ -129,35 +129,31 @@ a {
 }
 .profile .picture-resume img {
   border-radius: 50%;
-  width: 130px;
+  width: 150px;
 }
 @media (max-width: 1500px) {
   .profile .picture-resume img {
-    width: 80px;
+    width: 150px;
   }
 }
 @media (max-width: 1200px) {
   .profile .picture-resume img {
-    width: 120px;
-    height: 120px;
+    width: 150px;
   }
 }
 @media (max-width: 1500px) {
   .profile .picture-resume {
     width: 150px;
-    height: 150px;
   }
 }
 @media (max-width: 1200px) {
   .profile .picture-resume {
     width: 200px;
-    height: 200px;
   }
 }
 @media (max-width: 450px) {
   .profile .picture-resume {
     width: 180px;
-    height: 180px;
   }
 }
 .profile .contact-info {
