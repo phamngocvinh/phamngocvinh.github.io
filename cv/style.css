@@ -240,7 +240,7 @@ a {
   float: left;
   text-align: left;
   padding-right: 5%;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 @media (max-width: 450px) {
   .experience .company-wrapper {
@@ -253,7 +253,7 @@ a {
   float: left;
   text-align: left;
   padding-right: 5%;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 @media (max-width: 450px) {
   .experience .job-wrapper {
