@@ -1,686 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>My Profile - Pham Ngoc Vinh</title>
-  <link rel="icon" type="image/x-icon" href="assets/icon.svg" />
-  <!-- Font Awesome icons (free version)-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
-    crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/ce51b10703.js" crossorigin="anonymous"></script>
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/styles.css" rel="stylesheet" />
-  <!-- Fonts CSS-->
-  <link rel="stylesheet" href="css/heading.css" />
-  <link rel="stylesheet" href="css/body.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinh's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        :root {
+            --nord0: #2e3440;
+            --nord1: #3b4252;
+            --nord2: #434c5e;
+            --nord3: #4c566a;
+            --nord4: #d8dee9;
+            --nord5: #e5e9f0;
+            --nord6: #eceff4;
+            --nord8: #88c0d0;
+            --nord9: #81a1c1;
+            --nord10: #5e81ac;
+        }
+
+        body {
+            background-color: var(--nord0);
+            color: var(--nord4);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .nord-text-bright { color: var(--nord6); }
+        .nord-text-accent { color: var(--nord8); }
+        .nord-border { border-color: var(--nord3); }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--nord8);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .glass-card {
+            background: rgba(59, 66, 82, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(76, 86, 106, 0.5);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            background: rgba(59, 66, 82, 0.6);
+            border-color: var(--nord8);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .tag {
+            background: var(--nord2);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 10% 20%, rgba(136, 192, 208, 0.1) 0%, transparent 40%);
+        }
+    </style>
 </head>
+<body class="antialiased selection:bg-[#88c0d0] selection:text-[#2e3440]">
 
-<body id="page-top">
-  <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Vinh's Portfolio</a>
-      <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button"
-        data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation">
-        Menu <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#projects">PROJECTS</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#translations">TRANSLATIONS</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">ABOUT</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">CONTACT</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-      <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/avataaars.png" alt="" />
-      <!-- Masthead Heading-->
-      <h1 class="masthead-heading mb-0">PHAM NGOC VINH</h1>
-      <!-- Icon Divider-->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-      </div>
-      <!-- Masthead Subheading-->
-      <p class="pre-wrap masthead-subheading font-weight-light mb-0">Passionate Programmer - Occasionally Translator</p>
-    </div>
-  </header>
-  <section class="page-section portfolio" id="projects">
-    <div class="container">
-      <!-- Portfolio Section Heading-->
-      <div class="text-center">
-        <h2 class="page-section-heading text-secondary mb-0 d-inline-block">PROJECTS</h2>
-      </div>
-      <!-- Icon Divider-->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-      </div>
-      <!-- Portfolio Grid Items-->
-      <div class="row justify-content-center">
-        <!-- Portfolio Items-->
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-6 transition-all duration-300">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-sm font-bold tracking-[0.2em] nord-text-bright">Pham Ngoc Vinh</a>
+            <div class="flex space-x-10 text-[11px] uppercase tracking-widest font-semibold">
+                <a href="#projects" class="nav-link">Work</a>
+                <a href="#about" class="nav-link">Story</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <img class="img-fluid" src="https://dummyimage.com/900x650/384051/8ac0d1.jpg&text=Automatic+Engine"
-              alt="Log Cabin" />
-          </div>
         </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://dummyimage.com/900x650/5e81ac/fbfcfc.jpg&text=PyChecksum"
-              alt="Tasty Cake" />
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://dummyimage.com/900x650/005500/bbeebb.jpg&text=Excel+GREP"
-              alt="Circus Tent" />
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://dummyimage.com/900x650/3B4252/eceff4.jpg&text=Regular+101"
-              alt="Controller" />
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://dummyimage.com/900x650/222288/ffffff.jpg&text=Galaxy+Trader"
-              alt="Locked Safe" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Portfolio Modal-->
-  <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog"
-    aria-labelledby="#portfolioModal0Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="fas fa-times"></i></span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title-->
-                <h2 class="portfolio-modal-title text-secondary mb-0">
-                  Automatic Engine
-                </h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
-                  src="https://dummyimage.com/900x650/384051/8ac0d1.jpg&text=Automatic+Engine" alt="Log Cabin" />
-                <!-- Portfolio Modal - Text-->
-                <p class="mb-5"><a href="https://github.com/phamngocvinh/automatic-engine" class="btn btn-info"
-                    target="_blank">View on Github</a></p>
-                <p class="mb-5">💻 Tool to rename multiple files name with variety of conditions </p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog"
-    aria-labelledby="#portfolioModal1Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="fas fa-times"></i></span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title-->
-                <h2 class="portfolio-modal-title text-secondary mb-0">
-                  PyChecksum
-                </h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
-                  src="https://dummyimage.com/900x650/5e81ac/fbfcfc.jpg&text=PyChecksum" alt="Tasty Cake" />
-                <!-- Portfolio Modal - Text-->
-                <p class="mb-5"><a href="https://github.com/phamngocvinh/py-checksum" class="btn btn-info"
-                    target="_blank">View on Github</a></p>
-                <p class="mb-5">🛡️ Create and verify files hashes with one click </p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog"
-    aria-labelledby="#portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="fas fa-times"></i></span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title-->
-                <h2 class="portfolio-modal-title text-secondary mb-0">
-                  Excel GREP
-                </h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
-                  src="https://dummyimage.com/900x650/005500/bbeebb.jpg&text=Excel+GREP" alt="Circus Tent" />
-                <!-- Portfolio Modal - Text-->
-                <p class="mb-5"><a href="https://github.com/phamngocvinh/excel-grep" class="btn btn-info"
-                    target="_blank">View on Github</a></p>
-                <p class="mb-5">🔍 Microsoft Excel GREP Tool </p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog"
-    aria-labelledby="#portfolioModal3Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="fas fa-times"></i></span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title-->
-                <h2 class="portfolio-modal-title text-secondary mb-0">
-                  Regex 101
-                </h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
-                  src="https://dummyimage.com/900x650/3B4252/eceff4.jpg&text=Regular+101" alt="Controller" />
-                <!-- Portfolio Modal - Text-->
-                <p class="mb-5"><a href="https://phamngocvinh.github.io/regex101" class="btn btn-info"
-                    target="_blank">Visit</a></p>
-                <p class="mb-5">Regular Express Tutorial</p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog"
-    aria-labelledby="#portfolioModal4Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="fas fa-times"></i></span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title-->
-                <h2 class="portfolio-modal-title text-secondary mb-0">
-                  Galaxy trader
-                </h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
-                  src="https://dummyimage.com/900x650/222288/ffffff.jpg&text=Galaxy+Trader" alt="Locked Safe" />
-                <!-- Portfolio Modal - Text-->
-                <p class="mb-5"><a href="https://github.com/phamngocvinh/galaxy-trader" class="btn btn-info"
-                    target="_blank">View on Github</a></p>
-                <p class="mb-5">💹 MetaTrader 5 Toolkit </p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <section class="page-section portfolio" id="translations">
-    <div class="container">
-      <!-- Portfolio Section Heading-->
-      <div class="text-center">
-        <h2 class="page-section-heading text-secondary mb-0 d-inline-block">
-          TRANSLATIONS
-        </h2>
-      </div>
-      <!-- Icon Divider-->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-      </div>
-      <!-- Portfolio Grid Items-->
-      <div class="row justify-content-center">
-        <!-- Portfolio Items-->
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal10">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="assets/img/translation/alien-horror.jpg" alt="Log Cabin" />
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal11">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="assets/img/translation/no-more-sun.jpg" alt="Tasty Cake" />
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal12">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="assets/img/translation/moon-crash.jpg" alt="Circus Tent" />
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal21">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="assets/img/translation/how-to-change.jpg" alt="Circus Tent" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Portfolio Modal-->
-  <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" role="dialog"
-    aria-labelledby="#portfolioModal0Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="fas fa-times"></i></span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title-->
-                <h2 class="portfolio-modal-title text-secondary mb-0">
-                  Alien Horror
-                </h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
-                  src="assets/img/translation/alien-horror.jpg" alt="Log Cabin" />
-                <!-- Portfolio Modal - Text-->
-                <p class="mb-5"><a
-                    href="https://www.captionfy.io/video/youtube/xAUJYP8tnRE?caption=61c57f4d9ab127980fe7ef9a"
-                    class="btn btn-info" target="_blank">Watch on Captionfy</a></p>
-                <p class="mb-5">Confronted with the seemingly empty universe, humanity faces a dilemma. We desperately
-                  want to know if
-                  we are alone in the Milky Way. We want to call out and reveal ourselves to anyone watching but that
-                  could be the last thing we ever do. Because maybe the universe is not empty. Maybe it’s full of
-                  civilizations but they are hiding from each other. Maybe the civilizations that attracted attention in
-                  the past were wiped away by invisible arrows. This is the Dark Forest solution to the Fermi paradox.
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center px-6 hero-gradient">
+        <div class="max-w-5xl mx-auto w-full">
+            <div class="max-w-2xl">
+                <p class="text-sm nord-text-accent font-mono mb-4 tracking-tight">// Software Developer & Project Manager</p>
+                <h1 class="text-5xl md:text-7xl font-bold nord-text-bright mb-8 leading-[1.1]">
+                    Solving <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#88c0d0] to-[#81a1c1]">everyday problems</span> with lean code.
+                </h1>
+                <p class="text-lg text-gray-400 mb-10 leading-relaxed font-light">
+                    I build minimal applications that tackle small but meaningful challenges in life, blending logic with linguistic precision.
                 </p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="portfolio-modal modal fade" id="portfolioModal11" tabindex="-1" role="dialog"
-    aria-labelledby="#portfolioModal0Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="fas fa-times"></i></span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title-->
-                <h2 class="portfolio-modal-title text-secondary mb-0">
-                  No More Sun
-                </h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
+                <div class="flex items-center space-x-8">
+                    <a href="#projects" class="group flex items-center space-x-3 text-sm font-bold uppercase tracking-widest nord-text-bright">
+                        <span>Explore Work</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-2"></i>
+                    </a>
                 </div>
-                <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
-                  src="assets/img/translation/no-more-sun.jpg" alt="Log Cabin" />
-                <!-- Portfolio Modal - Text-->
-                <p class="mb-5"><a
-                    href="https://www.captionfy.io/video/youtube/gLZJlf5rHVs?caption=61ca7218ca7f2af08d149515"
-                    class="btn btn-info" target="_blank">Watch on Captionfy</a></p>
-                <p class="mb-5">The night sky seems peaceful and orderly. But in reality, stars are careening through
-                  the galaxy at speeds of hundreds of thousands of kilometres per hour. Not bound by static formations
-                  but changing neighbourhoods constantly. Fortunately space is big, and so the stars of the Milky Way
-                  are very unlikely to hit us. Unfortunately, they don’t have to hit anything to make us have a really
-                  bad time on earth. And there are already stars starting to get very close.
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col mb-20">
+                <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Projects</h2>
+                <div class="h-[1px] w-12 bg-[#88c0d0]"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="glass-card group p-8 rounded-2xl flex flex-col justify-between min-h-[320px]">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <i data-lucide="chart-no-axes-combined" class="w-6 h-6 nord-text-accent"></i>
+                            <div class="flex space-x-2">
+                                <span class="tag px-3 py-1 rounded-full">Flutter</span>
+                                <span class="tag px-3 py-1 rounded-full">Android</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-semibold nord-text-bright mb-4">Deeplott</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            The ultimate Big Data assistant, turning complex statistics into winning strategies through advanced heatmaps and predictive analytics.
+                        </p>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=com.zenithstudio.deeplott" class="inline-flex items-center text-xs font-bold uppercase tracking-widest nord-text-accent hover:nord-text-bright transition-colors">
+                        Visit Play Store <i data-lucide="play" class="w-3 h-3 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card group p-8 rounded-2xl flex flex-col justify-between min-h-[320px]">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <i data-lucide="code" class="w-6 h-6 nord-text-accent"></i>
+                            <div class="flex space-x-2">
+                                <span class="tag px-3 py-1 rounded-full">Open</span>
+                                <span class="tag px-3 py-1 rounded-full">Community</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-semibold nord-text-bright mb-4">Github Open Sources</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Crafting efficient code and data-centric solutions to solve real-world problems, one repository at a time.
+                        </p>
+                    </div>
+                    <a href="https://github.com/phamngocvinh" class="inline-flex items-center text-xs font-bold uppercase tracking-widest nord-text-accent hover:nord-text-bright transition-colors">
+                        View Details <i data-lucide="external-link" class="w-3 h-3 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Skills -->
+    <section id="about" class="py-32 px-6 bg-[#3b4252]/20">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
+            <div class="md:col-span-7">
+                <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-8">The Philosophy</h2>
+                <p class="text-2xl text-gray-300 leading-relaxed font-light">
+                    "I believe technology should be invisible. My focus is on <span class="nord-text-bright font-normal">minimal solutions</span> that tackle the 'little things' that matter."
                 </p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>Close Window
-                </button>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog"
-    aria-labelledby="#portfolioModal0Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="fas fa-times"></i></span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title-->
-                <h2 class="portfolio-modal-title text-secondary mb-0">
-                  Moon Crash
-                </h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
+            <div class="md:col-span-5">
+                <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-8">Expertise</h2>
+                <div class="grid grid-cols-1 gap-y-6 text-sm">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#88c0d0]"></div>
+                        <div>
+                            <span class="block font-bold nord-text-bright">Fullstack Development</span>
+                            <span class="text-gray-500 text-[11px]">Front-End, Back-End, Mobile & Database</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#88c0d0]"></div>
+                        <div>
+                            <span class="block font-bold nord-text-bright">Multilingual Communicator</span>
+                            <span class="text-gray-500 text-[11px]">Professional English & Japanese</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#88c0d0]"></div>
+                        <div>
+                            <span class="block font-bold nord-text-bright">Project Management</span>
+                            <span class="text-gray-400 text-[11px]">Agile Methodologies & Delivery Control</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#88c0d0]"></div>
+                        <div>
+                            <span class="block font-bold nord-text-bright">UX-First Minimalism</span>
+                            <span class="text-gray-400 text-[11px]">Focus on Purpose over Features</span>
+                        </div>
+                    </div>
                 </div>
-                <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
-                  src="assets/img/translation/moon-crash.jpg" alt="Log Cabin" />
-                <!-- Portfolio Modal - Text-->
-                <p class="mb-5"><a
-                    href="https://www.captionfy.io/video/youtube/lheapd7bgLA?caption=62036dfd173c9c2660901de8"
-                    class="btn btn-info" target="_blank">Watch on Captionfy</a></p>
-                <p class="mb-5">Today we are answering an age-old very scientific and important question: What if the
-                  moon crashes into earth? It’s more interesting and weird than you probably think. Let's start with the
-                  basics: Why isn't the Moon on its way to crash into us already?</p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>Close Window
-                </button>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="portfolio-modal modal fade" id="portfolioModal21" tabindex="-1" role="dialog"
-    aria-labelledby="#portfolioModal0Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="fas fa-times"></i></span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title-->
-                <h2 class="portfolio-modal-title text-secondary mb-0">
-                  Change Your Life – One Tiny Step at a Time
-                </h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
-                  src="assets/img/translation/how-to-change.jpg" alt="Log Cabin" />
-                <!-- Portfolio Modal - Text-->
-                <p class="mb-5"><a
-                    href="https://www.captionfy.com/video/youtube/75d_29QWELk?caption=6399df0f84efd43f84a68c4a"
-                    class="btn btn-info" target="_blank">Watch on Captionfy</a></p>
-                <p class="mb-5">If you are like most people, there is a gap between the person you are and the person you wish to be. There are little things you think you should do and big things you ought to achieve.
-                  But it can seem that to achieve your goals, you have to become a different person. Someone who is consistent, puts in more effort, has discipline and willpower. 
-                  But change is actually hard. But as with most things in life, understanding why makes things easier.
-                  </p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>Close Window
-                </button>
-              </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-40 px-6 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold nord-text-bright mb-8">Let's build something meaningful.</h2>
+            <a href="mailto:hello@example.com" class="text-xl nord-text-accent hover:nord-text-bright transition-colors border-b border-[#4c566a] pb-2">
+                phamngocvinh@live.com
+            </a>
+            <div class="flex justify-center space-x-10 mt-16">
+                <a href="https://github.com/phamngocvinh" class="text-gray-400 hover:nord-text-bright transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                <a href="https://www.linkedin.com/in/phamngocvinh932" class="text-gray-400 hover:nord-text-bright transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="https://www.captionfy.io/user/VinhGalaxy" class="text-gray-400 hover:nord-text-bright transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <section class="page-section bg-primary text-white mb-0" id="about">
-    <div class="container">
-      <!-- About Section Heading-->
-      <div class="text-center">
-        <h2 class="page-section-heading d-inline-block text-white">
-          ABOUT ME
-        </h2>
-      </div>
-      <!-- Icon Divider-->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-      </div>
-      <!-- About Section Content-->
-      <div class="row">
-        <div class="col-lg-4 ml-auto">
-          <p class="pre-wrap lead">&nbsp;&nbsp;&nbsp;&nbsp;Hi there, I'm Vinh and welcome to my site. I believe that sharing and contributing is what makes a product the best version of itself.<br>&nbsp;&nbsp;&nbsp;&nbsp;That's why I've made all of my projects public and free for everybody, both to learn and to improve.
-          </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-[#3b4252]/30">
+        <div class="max-w-5xl mx-auto flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-gray-600">
+            <p>© 2026 Pham Ngoc Vinh Portfolio</p>
+            <p>Minimal & Lean</p>
         </div>
-        <div class="col-lg-4 mr-auto">
-          <p class="pre-wrap lead">&nbsp;&nbsp;&nbsp;&nbsp;I sometimes do translations for science videos to self-improve my English skills.<br>&nbsp;&nbsp;&nbsp;&nbsp;If you are interesting, head over to <a href="https://www.captionfy.io/user/VinhGalaxy" class="text-white" target="_blank"><u>Captionfy</u></a> for some fun science or <a href="https://github.com/phamngocvinh" class="text-white" target="_blank"><u>GitHub</u></a> to check out useful projects.<br>&nbsp;&nbsp;&nbsp;&nbsp;Maybe we can learn something together.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="page-section" id="contact">
-    <div class="container">
-      <!-- Contact Section Heading-->
-      <div class="text-center">
-        <h2 class="page-section-heading text-secondary d-inline-block mb-0">
-          CONTACT
-        </h2>
-      </div>
-      <!-- Icon Divider-->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-      </div>
-      <!-- Contact Section Content-->
-      <div class="row justify-content-center">
-        <div class="col-lg-4">
-          <div class="d-flex flex-column align-items-center">
-            <div class="icon-contact mb-3">
-              <i class="fa-brands fa-github"></i>
-            </div>
-            <div class="text-muted">GitHub</div>
-            <div class="lead font-weight-bold">
-              <a href="https://github.com/phamngocvinh" target="_blank">phamngocvinh@GitHub</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="d-flex flex-column align-items-center">
-            <div class="icon-contact mb-3">
-              <i class="far fa-envelope"></i>
-            </div>
-            <div class="text-muted">Email</div>
-            <a class="lead font-weight-bold" href="mailto:phamngocvinh@live.com">phamngocvinh@live.com</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer class="footer text-center">
-    <div class="container">
-      <div class="row">
-        <!-- Footer Location-->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <h4 class="mb-4">LOCATION</h4>
-          <p class="pre-wrap lead mb-0">Ho Chi Minh City, Viet Nam</p>
-        </div>
-        <!-- Footer Social Icons-->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <h4 class="mb-4">AROUND THE WEB</h4>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/phamngocvinh932"
-            target="_blank"><i class="fab fa-fw fa-facebook-f"></i></a><a class="btn btn-outline-light btn-social mx-1"
-            href="https://twitter.com/phamngocvinh932" target="_blank"><i class="fab fa-fw fa-twitter"></i></a><a
-            class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/phamngocvinh932"
-            target="_blank"><i class="fab fa-fw fa-linkedin-in"></i></a><a class="btn btn-outline-light btn-social mx-1"
-            href="https://www.captionfy.io/user/VinhGalaxy" target="_blank"><i
-              class="fa-solid fa-closed-captioning"></i></a>
-        </div>
-        <!-- Footer About Text-->
-        <div class="col-lg-4">
-          <h4 class="mb-4">QUOTE</h4>
-          <p class="pre-wrap lead mb-0" style="font-size: 1.16rem">Open source is the right way to do things.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Copyright Section-->
-  <section class="copyright py-4 text-center text-white">
-    <div class="container">
-      <small class="pre-wrap">Copyright © Pham Ngoc Vinh</small>
-    </div>
-  </section>
-  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-  <div class="scroll-to-top d-lg-none position-fixed">
-    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i
-        class="fa fa-chevron-up"></i></a>
-  </div>
-  <!-- Bootstrap core JS-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-  <!-- Third party plugin JS-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-  <!-- Contact form JS-->
-  <script src="assets/mail/jqBootstrapValidation.js"></script>
-  <script src="assets/mail/contact_me.js"></script>
-  <!-- Core theme JS-->
-  <script src="js/scripts.js"></script>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Simple Scroll Animation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-[#2e3440]/80', 'backdrop-blur-md', 'py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('bg-[#2e3440]/80', 'backdrop-blur-md', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+    </script>
 </body>
-
 </html>
