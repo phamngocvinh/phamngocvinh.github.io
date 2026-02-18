@@ -1,0 +1,37 @@
+<svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><!-- Kính mờ chính --><linearGradient id="peakGradient" x1="200" y1="80" x2="200" y2="220" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="white" stop-opacity="0.3"/><stop offset="100%" stop-color="white" stop-opacity="0.05"/></linearGradient>    <!-- Viền kính -->
+    <linearGradient id="edgeGradient" x1="120" y1="80" x2="280" y2="220" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="white" stop-opacity="0.7"/>
+        <stop offset="50%" stop-color="white" stop-opacity="0.1"/>
+        <stop offset="100%" stop-color="#88c0d0" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Núi nền -->
+    <linearGradient id="backMountain" x1="200" y1="100" x2="200" y2="220" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#5e81ac"/>
+        <stop offset="100%" stop-color="#3b4252"/>
+    </linearGradient>
+</defs>
+
+<!-- Lớp núi xa -->
+<path d="M60 220 L160 100 L230 180 L300 110 L380 220 Z" fill="url(#backMountain)" opacity="0.5" />
+
+<!-- Lớp núi giữa -->
+<path d="M100 220 L210 90 L320 220 Z" fill="#81a1c1" opacity="0.3" />
+
+<!-- Ngọn núi chính (Glassmorphism) -->
+<g>
+    <path d="M130 220 L240 70 L350 220 Z" 
+          fill="url(#peakGradient)" 
+          stroke="url(#edgeGradient)" 
+          stroke-width="2" />
+    
+    <!-- Sống núi phản quang -->
+    <path d="M240 70 L240 220" stroke="white" stroke-opacity="0.25" stroke-width="1.5" />
+    
+    <!-- Tuyết trên đỉnh -->
+    <path d="M240 70 L265 105 L240 90 L215 105 Z" fill="white" fill-opacity="0.7" />
+</g>
+
+<!-- Chân đế tối giản -->
+<rect x="100" y="235" width="200" height="2" fill="#88c0d0" opacity="0.3" rx="1" />
+</svg>

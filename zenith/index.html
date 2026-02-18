@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Studio | The Peak of Digital Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Import Lucide Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Nord Theme Palette */
+            --nord0: #2e3440;
+            --nord1: #3b4252;
+            --nord2: #434c5e;
+            --nord3: #4c566a;
+            --nord4: #d8dee9;
+            --nord5: #e5e9f0;
+            --nord6: #eceff4;
+            --nord7: #8fbcbb;
+            --nord8: #88c0d0;
+            --nord9: #81a1c1;
+            --nord10: #5e81ac;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--nord0);
+            color: var(--nord6);
+            min-height: 100vh;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism Square */
+        .glass-panel {
+            background: rgba(46, 52, 64, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(143, 188, 187, 0.2);
+        }
+
+        .nord-gradient-text {
+            background: linear-gradient(135deg, var(--nord7) 0%, var(--nord9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Minimal & Sharp corners */
+        * {
+            border-radius: 0 !important;
+        }
+
+        .lean-border {
+            border: 1px solid rgba(136, 192, 208, 0.3);
+        }
+
+        .btn-lean {
+            background: var(--nord8);
+            color: var(--nord0);
+            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .btn-lean:hover {
+            transform: scale(1.05);
+            background: var(--nord7);
+            box-shadow: 0 0 20px rgba(136, 192, 208, 0.4);
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+            letter-spacing: 0.2em;
+        }
+
+        .nav-link:hover {
+            color: var(--nord8);
+        }
+
+        section {
+            padding: 10rem 2rem;
+        }
+
+        .project-card {
+            transition: all 0.4s ease;
+            background: rgba(59, 66, 82, 0.4);
+            position: relative;
+        }
+
+        .project-card:hover {
+            background: rgba(67, 76, 94, 0.6);
+            border-color: var(--nord8);
+        }
+
+        /* Decorative Zenith Line */
+        .zenith-line {
+            width: 1px;
+            height: 80px;
+            background: var(--nord8);
+            margin-bottom: 2rem;
+        }
+
+        .mountain-logo-container svg {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+        }
+
+        .view-project-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--nord8);
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .view-project-btn:hover {
+            gap: 20px;
+            color: var(--nord7);
+        }
+
+        /* ĐỊNH DẠNG ICON TRONG CARD DỰ ÁN - TĂNG KÍCH THƯỚC CỰC ĐẠI */
+        .project-icon-wrapper {
+            height: 320px; /* Tăng chiều cao khung chứa icon */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--nord1);
+            overflow: hidden;
+        }
+
+        .project-icon-wrapper i, 
+        .project-icon-wrapper svg {
+            width: 220px !important;  /* Ép kích thước icon lên 220px */
+            height: 220px !important;
+            color: var(--nord8);
+            transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+            stroke-width: 0.75px; /* Giảm độ dày để icon to không bị thô */
+            opacity: 0.8;
+        }
+        
+        .project-card:hover .project-icon-wrapper i,
+        .project-card:hover .project-icon-wrapper svg {
+            transform: scale(1.1) rotate(-2deg);
+            color: var(--nord7);
+            opacity: 1;
+            filter: drop-shadow(0 0 30px rgba(143, 188, 187, 0.3));
+        }
+
+        /* Hiệu ứng kính cho icon */
+        .icon-bg-blur {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: var(--nord8);
+            filter: blur(80px);
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        /* Responsive di động */
+        @media (max-width: 768px) {
+            .project-icon-wrapper {
+                height: 240px;
+            }
+            .project-icon-wrapper i, 
+            .project-icon-wrapper svg {
+                width: 140px !important;
+                height: 140px !important;
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-nord8 selection:text-nord0">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 p-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-panel px-10 py-5 lean-border">
+            <div class="text-xl font-extrabold tracking-[0.3em]">
+                <a href="#" class="nord-gradient-text">ZENITH<span class="text-white">STUDIO</span></a>
+            </div>
+            <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.4em] font-bold">
+                <a href="#vision" class="nav-link">Vision</a>
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#services" class="nav-link">Services</a>
+            </div>
+            <div>
+                <a href="#contact" class="text-[9px] font-bold border border-nord8/40 px-6 py-3 hover:bg-nord8 hover:text-nord0 transition-all tracking-widest">GET IN TOUCH</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
+        <div class="zenith-line"></div>
+        <h2 class="text-xs uppercase tracking-[1em] text-nord7 mb-8">Lean • Minimal • Glass</h2>
+        <h1 class="text-5xl md:text-8xl font-black mb-12 tracking-tighter leading-none">
+            REACH THE <br><span class="nord-gradient-text">NEXT PEAK.</span>
+        </h1>
+        <p class="max-w-xl text-nord4 text-sm md:text-base mb-16 leading-relaxed font-light uppercase tracking-[0.2em]">
+            We architect digital solutions with absolute simplicity and superior performance.
+        </p>
+        <div class="flex flex-col md:flex-row gap-0">
+            <a href="#work" class="btn-lean px-14 py-6 text-sm">Explore Portfolio</a>
+            <a href="#contact" class="border border-nord4/20 px-14 py-6 text-sm font-bold hover:bg-nord4/10 transition-all uppercase tracking-widest">Start a Project</a>
+        </div>
+
+        <!-- Abstract Background Element -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-nord8/10 -z-10 rotate-12"></div>
+    </header>
+
+    <!-- Vision Section -->
+    <section id="vision" class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="glass-panel p-16 lean-border">
+                <h3 class="text-xs uppercase tracking-[0.5em] text-nord8 font-bold mb-8">The Zenith Philosophy</h3>
+                <h4 class="text-4xl font-bold mb-10 leading-tight text-nord6">Simplicity is <br>Sophistication.</h4>
+                <p class="text-nord4 mb-12 font-light leading-loose">
+                    At Zenith Studio, we believe that minimalism isn't about having less, but having exactly enough. 
+                    We apply Lean methodologies to eliminate waste and focus purely on core value.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-6">
+                        <div class="w-10 h-10 border border-nord8/30 flex items-center justify-center text-nord8 text-xs font-bold">01</div>
+                        <span class="text-[10px] uppercase tracking-widest font-bold">Peak Performance</span>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <div class="w-10 h-10 border border-nord8/30 flex items-center justify-center text-nord8 text-xs font-bold">02</div>
+                        <span class="text-[10px] uppercase tracking-widest font-bold">Translucent Interfaces</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative py-12 flex justify-center items-center mountain-logo-container">
+                <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full drop-shadow-2xl">
+                    <defs>
+                        <linearGradient id="peakGradient" x1="200" y1="80" x2="200" y2="220" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#eceff4" stop-opacity="0.25"/>
+                            <stop offset="100%" stop-color="#eceff4" stop-opacity="0.05"/>
+                        </linearGradient>    
+                        
+                        <linearGradient id="edgeGradient" x1="120" y1="80" x2="280" y2="220" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#8fbcbb" stop-opacity="0.8"/>
+                            <stop offset="50%" stop-color="#88c0d0" stop-opacity="0.2"/>
+                            <stop offset="100%" stop-color="#81a1c1" stop-opacity="0.6"/>
+                        </linearGradient>
+
+                        <linearGradient id="backMountain" x1="200" y1="100" x2="200" y2="220" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#5e81ac"/>
+                            <stop offset="100%" stop-color="#3b4252"/>
+                        </linearGradient>
+                    </defs>
+
+                    <path d="M60 220 L160 100 L230 180 L300 110 L380 220 Z" fill="url(#backMountain)" opacity="0.4" />
+                    <path d="M100 220 L210 90 L320 220 Z" fill="#81a1c1" opacity="0.25" />
+
+                    <g>
+                        <path d="M130 220 L240 70 L350 220 Z" 
+                              fill="url(#peakGradient)" 
+                              stroke="url(#edgeGradient)" 
+                              stroke-width="1.5" />
+                        <path d="M240 70 L240 220" stroke="#eceff4" stroke-opacity="0.2" stroke-width="1" />
+                        <path d="M240 70 L265 105 L240 90 L215 105 Z" fill="#eceff4" fill-opacity="0.8" />
+                    </g>
+
+                    <rect x="100" y="235" width="200" height="1" fill="#88c0d0" opacity="0.4" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="work" class="bg-nord1/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
+                <div>
+                    <h2 class="text-xs uppercase tracking-[0.5em] text-nord7 font-bold mb-4">// Selected Works</h2>
+                    <h3 class="text-5xl font-bold">The Apex Projects</h3>
+                </div>
+                <p class="text-nord3 uppercase text-[10px] tracking-widest font-bold max-w-xs text-right">
+                    Products of precision and geometric architecture.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-px bg-nord3/20">
+                <!-- Project Item 1 -->
+                <div class="project-card p-16 border border-nord3/10 overflow-hidden">
+                    <div class="project-icon-wrapper mb-12 relative">
+                        <div class="icon-bg-blur"></div>
+                        <!-- Lucide Icon: LayoutDashboard -->
+                        <i data-lucide="chart-column-increasing" class="relative z-10"></i>
+                    </div>
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="text-2xl font-bold">Deeplott</h4>
+                        <span class="text-[10px] px-3 py-1 border border-nord8/30 text-nord8 uppercase">2026</span>
+                    </div>
+                    <p class="text-nord4 text-sm font-light mb-4 leading-relaxed"> The ultimate Big Data assistant, turning complex statistics into winning strategies through advanced heatmaps and predictive analytics.</p>
+                    <div class="flex gap-4 opacity-40">
+                        <span class="text-[9px] font-bold uppercase tracking-tighter">Analysis</span>
+                        <span class="text-[9px] font-bold uppercase tracking-tighter">Mobile</span>
+                    </div>
+                    <a href="../deeplott/index.html" class="view-project-btn">
+                        View Project 
+                        <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Project Item 2 -->
+                <div class="project-card p-16 border border-nord3/10 overflow-hidden">
+                    <div class="project-icon-wrapper mb-12 relative">
+                        <div class="icon-bg-blur"></div>
+                        <!-- Lucide Icon: Orbit -->
+                        <i data-lucide="clock-fading" class="relative z-10"></i>
+                    </div>
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="text-2xl font-bold">Nanosecond</h4>
+                        <span class="text-[10px] px-3 py-1 border border-nord8/30 text-nord8 uppercase">Coming soon</span>
+                    </div>
+                    <p class="text-nord4 text-sm font-light mb-4 leading-relaxed">high-precision financial logging tool engineered to eliminate input friction, allowing you to capture every expense with a single, lightning-fast interaction.</p>
+                    <div class="flex gap-4 opacity-40">
+                        <span class="text-[9px] font-bold uppercase tracking-tighter">Utilities</span>
+                        <span class="text-[9px] font-bold uppercase tracking-tighter">Mobile</span>
+                    </div>
+                    <a href="../nanosecond/index.html" class="view-project-btn">
+                        View Details
+                        <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise / Services -->
+    <section id="services" class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-0 border border-nord3/20">
+            <div class="p-16 border-r border-nord3/20 glass-panel">
+                <div class="w-8 h-1 bg-nord8 mb-10"></div>
+                <h4 class="text-lg font-bold mb-6 uppercase tracking-widest">Lean Design</h4>
+                <p class="text-nord4 text-sm leading-loose font-light">Focused on function. Eliminating noise. Clean and intuitive interfaces.</p>
+            </div>
+            <div class="p-16 border-r border-nord3/20 bg-nord8 text-nord0">
+                <div class="w-8 h-1 bg-nord0 mb-10"></div>
+                <h4 class="text-lg font-bold mb-6 uppercase tracking-widest">Digital Engineering</h4>
+                <p class="text-nord1 text-sm leading-loose font-bold">Building applications with optimized code and hyper-fast loading speeds.</p>
+            </div>
+            <div class="p-16 glass-panel">
+                <div class="w-8 h-1 bg-nord8 mb-10"></div>
+                <h4 class="text-lg font-bold mb-6 uppercase tracking-widest">Glass UI</h4>
+                <p class="text-nord4 text-sm leading-loose font-light">Utilizing depth and transparency to create modern, professional aesthetics.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-7xl mx-auto border-t border-nord3/20">
+        <div class="grid md:grid-cols-2 gap-24">
+            <div>
+                <h3 class="text-6xl font-black mb-12 tracking-tighter">Build with <br><span class="nord-gradient-text">Zenith.</span></h3>
+                <p class="text-nord4 text-lg font-light mb-12">Ready to take your product to the next peak?</p>
+                <a href="mailto:zenith.studio.ltd@gmail.com" class="text-3xl font-bold border-b-2 border-nord8 pb-4 hover:text-nord8 transition-colors">zenith.studio.ltd@gmail.com</a>
+            </div>
+            <div class="glass-panel p-12 lean-border">
+                <h4 class="text-xs font-bold uppercase tracking-[0.3em] mb-10 text-nord7">Studio Office</h4>
+                <div class="space-y-8 text-nord4 font-light text-sm uppercase tracking-widest leading-loose">
+                    <p>Da Nang City, Vietnam</p>
+                    <div class="flex gap-8">
+                        <a href="https://www.linkedin.com/in/phamngocvinh932" class="hover:text-nord8 transition-colors">linkedIn</a>
+                        <a href="https://phamngocvinh.github.io/" class="hover:text-nord8 transition-colors">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-nord0 border-t border-nord3/10 text-center">
+        <p class="text-[9px] uppercase tracking-[0.8em] text-nord3 font-bold">
+            &copy; 2026 ZENITH STUDIO • PROVIDING LEAN & MINIMAL SOLUTIONS
+        </p>
+    </footer>
+
+    <script>
+        // Khởi tạo Lucide Icons
+        lucide.createIcons();
+
+        // Hiệu ứng Reveal khi Scroll
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000', 'ease-out');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
