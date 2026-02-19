@@ -1,46 +1,177 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chính sách bảo mật - Deeplott</title>
+    <title>Privacy Policy | Deeplott by Zenith Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { color: #34495e; margin-top: 30px; }
-        .footer { margin-top: 50px; font-size: 0.9em; color: #7f8c8d; }
+        :root {
+            --nord0: #2e3440;
+            --nord1: #3b4252;
+            --nord2: #434c5e;
+            --nord3: #4c566a;
+            --nord4: #d8dee9;
+            --nord6: #eceff4;
+            --nord8: #88c0d0;
+            --nord10: #5e81ac;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--nord0);
+            color: var(--nord4);
+            line-height: 1.7;
+        }
+        .policy-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .lang-switch {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+        }
+        .glass-card {
+            background: rgba(59, 66, 82, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(136, 192, 208, 0.1);
+            padding: 3rem;
+        }
+        h1, h2, h3 {
+            color: var(--nord6);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .highlight {
+            color: var(--nord8);
+        }
+        .disclaimer-box {
+            border-left: 4px solid var(--nord10);
+            background: rgba(94, 129, 172, 0.1);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        [lang="vi"] { display: none; }
     </style>
 </head>
-<body>
+<body class="selection:bg-nord8 selection:text-nord0">
 
-    <h1>Chính sách bảo mật</h1>
-    <p>Ngày cập nhật: 06/02/2026</p>
-
-    <p>Chính sách bảo mật này mô tả cách <strong>Zenith Studio</strong> thu thập, sử dụng và chia sẻ thông tin cá nhân của bạn khi bạn sử dụng ứng dụng <strong>Deeplott</strong>.</p>
-
-    <h2>1. Thông tin chúng tôi thu thập</h2>
-    <p>Chúng tôi không yêu cầu bạn cung cấp thông tin cá nhân để sử dụng các tính năng cơ bản của ứng dụng. Tuy nhiên, ứng dụng có thể sử dụng các dịch vụ của bên thứ ba có thể thu thập thông tin dùng để nhận dạng bạn:</p>
-    <ul>
-        <li>Dịch vụ Google Play</li>
-        <li>Google AdMob (nếu có quảng cáo)</li>
-        <li>Firebase Analytics (nếu có theo dõi hành vi)</li>
-    </ul>
-
-    <h2>2. Dữ liệu nhật ký</h2>
-    <p>Trong trường hợp có lỗi xảy ra trong ứng dụng, chúng tôi thu thập dữ liệu và thông tin (thông qua các sản phẩm của bên thứ ba) trên điện thoại của bạn được gọi là Dữ liệu Nhật ký để cải thiện hiệu suất ứng dụng.</p>
-
-    <h2>3. Quyền riêng tư của trẻ em</h2>
-    <p>Các dịch vụ này không dành cho bất kỳ ai dưới 13 tuổi. Chúng tôi không cố ý thu thập thông tin nhận dạng cá nhân từ trẻ em dưới 13 tuổi.</p>
-
-    <h2>4. Thay đổi đối với Chính sách bảo mật này</h2>
-    <p>Chúng tôi có thể cập nhật Chính sách bảo mật của mình theo thời gian. Bạn nên xem lại trang này định kỳ để biết bất kỳ thay đổi nào.</p>
-
-    <h2>5. Liên hệ với chúng tôi</h2>
-    <p>Nếu bạn có bất kỳ câu hỏi hoặc đề xuất nào về Chính sách bảo mật của chúng tôi, đừng ngần ngại liên hệ với chúng tôi tại: <strong>zenith.studio.ltd@gmail.com</strong>.</p>
-
-    <div class="footer">
-        <p>&copy; 2026 Zenith Studio. Bảo lưu mọi quyền.</p>
+    <!-- Language Toggle -->
+    <div class="lang-switch">
+        <button id="toggleLang" class="bg-nord2 hover:bg-nord3 text-nord6 px-4 py-2 text-xs font-bold tracking-widest border border-nord8/20 transition-all uppercase">
+            Switch to Tiếng Việt
+        </button>
     </div>
 
+    <div class="policy-container">
+        <!-- Header -->
+        <header class="mb-16 text-center">
+            <div class="w-12 h-1 bg-nord10 mx-auto mb-8"></div>
+            <h1 class="text-4xl mb-4 uppercase tracking-tighter">Privacy Policy</h1>
+            <p class="text-nord3 text-sm tracking-widest uppercase">Deeplott • Zenith Studio • Statistics & Analytics</p>
+        </header>
+
+        <main class="glass-card">
+            <!-- English Version -->
+            <div id="en-content" lang="en">
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">Nature of Service</h2>
+                    <p class="mb-4"><span class="highlight">Deeplott</span> is an analytical tool that processes <span class="highlight">publicly available data</span> from Vietlott for statistical and probabilistic research purposes. We do not provide gambling services.</p>
+                </section>
+
+                <div class="disclaimer-box">
+                    <h3 class="text-sm uppercase tracking-widest mb-2 text-nord10">Important Disclaimer</h3>
+                    <p class="text-sm">Probability analysis is for informational purposes only. Past results do not guarantee future outcomes. Users are responsible for their own financial decisions.</p>
+                </div>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">1. Data Collection</h2>
+                    <p class="mb-4">Deeplott prioritizes user anonymity. We collect:</p>
+                    <ul class="list-disc ml-6 space-y-2 text-nord3">
+                        <li><strong>No Personal Identity:</strong> We do not ask for your name, email, or phone number.</li>
+                        <li><strong>Public Data:</strong> We only fetch lottery results that are publicly released by the official operator.</li>
+                        <li><strong>Anonymous Usage Data:</strong> We may collect basic technical data (e.g., device type) to optimize performance, but this is never linked to your identity.</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">2. Local Processing</h2>
+                    <p>Most of the probability calculations and personalized number tracking are performed <span class="highlight">locally on your device</span>. We do not maintain personal profiles of your "favorite" numbers on our servers.</p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">3. Third-Party Links</h2>
+                    <p>Deeplott may display information from official lottery sources. We are not responsible for the privacy practices or content of these external websites.</p>
+                </section>
+
+                <footer class="mt-16 pt-8 border-t border-nord3/20 text-xs text-nord3">
+                    Last updated: February 2026 • Zenith Studio
+                </footer>
+            </div>
+
+            <!-- Vietnamese Version -->
+            <div id="vi-content" lang="vi">
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">Bản chất Dịch vụ</h2>
+                    <p class="mb-4"><span class="highlight">Deeplott</span> là một công cụ phân tích xử lý <span class="highlight">dữ liệu công khai</span> từ Vietlott cho mục đích nghiên cứu thống kê và xác suất. Chúng tôi không cung cấp dịch vụ cờ bạc hay đặt cược.</p>
+                </section>
+
+                <div class="disclaimer-box">
+                    <h3 class="text-sm uppercase tracking-widest mb-2 text-nord10">Tuyên bố miễn trừ trách nhiệm</h3>
+                    <p class="text-sm">Phân tích xác suất chỉ dành cho mục đích tham khảo thông tin. Kết quả trong quá khứ không đảm bảo cho kết quả trong tương lai. Người dùng hoàn toàn chịu trách nhiệm về các quyết định tài chính của mình.</p>
+                </div>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">1. Thu thập Dữ liệu</h2>
+                    <p class="mb-4">Deeplott ưu tiên tính ẩn danh của người dùng:</p>
+                    <ul class="list-disc ml-6 space-y-2 text-nord3">
+                        <li><strong>Không định danh cá nhân:</strong> Chúng tôi không yêu cầu tên, email hoặc số điện thoại của bạn.</li>
+                        <li><strong>Dữ liệu Công khai:</strong> Chúng tôi chỉ lấy kết quả xổ số được công bố công khai bởi đơn vị vận hành chính thức.</li>
+                        <li><strong>Dữ liệu sử dụng ẩn danh:</strong> Chúng tôi có thể thu thập dữ liệu kỹ thuật cơ bản (ví dụ: loại thiết bị) để tối ưu hiệu suất, nhưng dữ liệu này không bao giờ được liên kết với danh tính của bạn.</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">2. Xử lý Cục bộ</h2>
+                    <p>Hầu hết các tính toán xác suất và theo dõi bộ số cá nhân được thực hiện <span class="highlight">ngay trên thiết bị của bạn</span>. Chúng tôi không lưu trữ hồ sơ cá nhân về các bộ số "yêu thích" của bạn trên máy chủ của chúng tôi.</p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">3. Liên kết Bên thứ ba</h2>
+                    <p>Deeplott có thể hiển thị thông tin từ các nguồn xổ số chính thức. Chúng tôi không chịu trách nhiệm về thực tiễn quyền riêng tư hoặc nội dung của các trang web bên ngoài này.</p>
+                </section>
+
+                <footer class="mt-16 pt-8 border-t border-nord3/20 text-xs text-nord3">
+                    Cập nhật lần cuối: Tháng 2, 2026 • Zenith Studio
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const btn = document.getElementById('toggleLang');
+        const enContent = document.getElementById('en-content');
+        const viContent = document.getElementById('vi-content');
+        let currentLang = 'en';
+
+        btn.addEventListener('click', () => {
+            if (currentLang === 'en') {
+                enContent.style.display = 'none';
+                viContent.style.display = 'block';
+                btn.innerText = 'Chuyển sang English';
+                currentLang = 'vi';
+            } else {
+                enContent.style.display = 'block';
+                viContent.style.display = 'none';
+                btn.innerText = 'Switch to Tiếng Việt';
+                currentLang = 'en';
+            }
+        });
+    </script>
 </body>
 </html>
