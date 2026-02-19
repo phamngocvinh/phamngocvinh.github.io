@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanosecond | Log expenses in a flash</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --nord0: #2e3440;
+            --nord1: #3b4252;
+            --nord3: #4c566a;
+            --nord4: #d8dee9;
+            --nord6: #eceff4;
+            --nord8: #88c0d0;
+            --nord9: #81a1c1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--nord0);
+            color: var(--nord6);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(59, 66, 82, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(136, 192, 208, 0.1);
+        }
+
+        /* Sharp edges as requested */
+        * {
+            border-radius: 0 !important;
+        }
+
+        .feature-icon {
+            color: var(--nord8);
+        }
+
+        .lightning-glow {
+            filter: drop-shadow(0 0 15px rgba(136, 192, 208, 0.4));
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(136, 192, 208, 0.03) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        .lang-node {
+            display: none;
+        }
+        .lang-node.active {
+            display: block;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SVG Chart Animation */
+        .chart-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 3s ease-in-out;
+        }
+        .active-chart .chart-path {
+            stroke-dashoffset: 0;
+        }
+        
+        .chart-point {
+            transition: opacity 0.5s ease-in;
+            opacity: 0;
+        }
+        .active-chart .chart-point {
+            opacity: 1;
+        }
+
+        .download-link {
+            transition: all 0.3s ease;
+            opacity: 0.8;
+            color: #eceff4;
+        }
+        .download-link:hover {
+            opacity: 1;
+            color: var(--nord8);
+        }
+
+        /* Fixed Feature Grid Borders */
+        .feature-grid {
+            display: grid;
+            border-top: 1px solid rgba(136, 192, 208, 0.1);
+            border-left: 1px solid rgba(136, 192, 208, 0.1);
+        }
+        .feature-item {
+            border-right: 1px solid rgba(136, 192, 208, 0.1);
+            border-bottom: 1px solid rgba(136, 192, 208, 0.1);
+        }
+    </style>
+</head>
+<body class="hero-pattern">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 p-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center glass-card px-8 py-4">
+            <div class="flex items-center gap-3">
+                <svg width="24" height="24" viewBox="0 0 512 512" fill="none" class="lightning-glow">
+                    <rect width="512" height="512" fill="#2E3440"/>
+                    <circle cx="256" cy="256" r="200" stroke="#88C0D0" stroke-width="20"/>
+                    <path d="M256 256L240 210H280L256 160H300L240 80" stroke="#88C0D0" stroke-width="25" stroke-linecap="square" stroke-linejoin="miter"/>
+                </svg>
+                <span class="font-extrabold tracking-widest text-lg">NANOSECOND</span>
+            </div>
+            
+            <div class="flex items-center space-x-8">
+                <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.3em] font-bold">
+                    <a href="#features" class="hover:text-nord8 transition-colors" data-en="Features" data-vi="Tính năng">Features</a>
+                    <a href="#management" class="hover:text-nord8 transition-colors" data-en="Insights" data-vi="Quản lý">Insights</a>
+                    <a href="#download" class="hover:text-nord8 transition-colors" data-en="Download" data-vi="Tải về">Download</a>
+                </div>
+                <button id="langToggle" class="text-[9px] border border-nord8/40 px-3 py-1 font-bold hover:bg-nord8 hover:text-nord0 transition-all tracking-widest uppercase">
+                    EN / VI
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+        <div class="mb-6 reveal">
+            <div class="inline-block border border-nord8/20 px-4 py-1 text-[10px] uppercase tracking-[0.5em] text-nord8">
+                Speed is the only feature
+            </div>
+        </div>
+        <h1 class="text-5xl md:text-8xl font-black mb-6 tracking-tighter leading-tight reveal">
+            <span class="lang-node active" data-lang="en">LOG FASTER <br>THAN <span class="text-nord8">THOUGHT.</span></span>
+            <span class="lang-node" data-lang="vi">GHI CHÉP <span class="text-nord8">NHANH</span> <br>HƠN CẢ SUY NGHĨ.</span>
+        </h1>
+        <p class="max-w-2xl text-nord4 text-sm md:text-lg mb-12 font-light tracking-wide leading-relaxed reveal">
+            <span class="lang-node active" data-lang="en">The world's most minimalist expense tracker. <br class="hidden md:block">No menus. No friction. Not a second wasted.</span>
+            <span class="lang-node" data-lang="vi">Ứng dụng log chi tiêu tối giản nhất thế giới. <br class="hidden md:block">Không menu rườm rà. Không tốn đến giây thứ hai.</span>
+        </p>
+        
+        <div class="w-full max-w-lg glass-card p-2 flex items-center border-nord8/40 shadow-2xl reveal">
+            <div class="bg-nord0 px-6 py-4 flex-grow text-left font-mono text-nord8">
+                <span class="opacity-50">></span> <span id="inputMockup">20 bucks breakfast</span>_
+            </div>
+            <button class="bg-nord8 text-nord0 px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-nord7 transition-all">
+                LOG IT
+            </button>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Adjusted Grid with explicit borders for all sides -->
+            <div class="feature-grid grid-cols-1 md:grid-cols-3">
+                <div class="feature-item p-12 transition-all hover:bg-nord1/50 reveal">
+                    <i data-lucide="zap" class="w-10 h-10 mb-8 feature-icon"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tighter" data-en="Natural Input" data-vi="Nhập liệu Tự nhiên">Natural Input</h3>
+                    <p class="text-nord4 text-sm font-light leading-loose">
+                        <span class="lang-node active" data-lang="en">Forget picking categories. Just type "5 bucks gas", AI handles the rest instantly.</span>
+                        <span class="lang-node" data-lang="vi">Quên đi việc chọn category. Chỉ cần gõ "50k xăng", AI sẽ tự động phân loại ngay lập tức.</span>
+                    </p>
+                </div>
+                <div class="feature-item p-12 transition-all hover:bg-nord1/50 reveal">
+                    <i data-lucide="mic" class="w-10 h-10 mb-8 feature-icon"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tighter" data-en="Voice-to-Log" data-vi="Ghi âm giọng nói">Voice-to-Log</h3>
+                    <p class="text-nord4 text-sm font-light leading-loose">
+                        <span class="lang-node active" data-lang="en">Driving or busy? Hold and speak. Real-time conversion to entries.</span>
+                        <span class="lang-node" data-lang="vi">Đang lái xe hay bận rộn? Nhấn giữ và nói. Chuyển hóa giọng nói thành dữ liệu chi tiêu.</span>
+                    </p>
+                </div>
+                <div class="feature-item p-12 transition-all hover:bg-nord1/50 reveal">
+                    <i data-lucide="camera" class="w-10 h-10 mb-8 feature-icon"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tighter" data-en="Receipt Scan" data-vi="Quét Hóa Đơn">Receipt Scan</h3>
+                    <p class="text-nord4 text-sm font-light leading-loose">
+                        <span class="lang-node active" data-lang="en">Snap a photo. AI extracts total, date, and merchant automatically.</span>
+                        <span class="lang-node" data-lang="vi">Chụp ảnh hóa đơn, AI của chúng tôi sẽ bóc tách dữ liệu để log giúp bạn.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Management/Insights Section -->
+    <section id="management" class="py-32 px-6 bg-nord1/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="space-y-12 reveal">
+                    <h2 class="text-4xl font-black tracking-tighter uppercase" data-en="PRO DATA MANAGEMENT" data-vi="QUẢN LÝ DỮ LIỆU CHUYÊN NGHIỆP">PRO DATA MANAGEMENT</h2>
+                    
+                    <div class="space-y-10">
+                        <div class="flex gap-6">
+                            <div class="bg-nord8/10 p-4 h-fit">
+                                <i data-lucide="bar-chart-3" class="w-6 h-6 text-nord8"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2 uppercase tracking-wide" data-en="Advanced Statistics" data-vi="Thống kê chuyên sâu">Advanced Statistics</h4>
+                                <p class="text-nord4 text-sm font-light leading-relaxed">
+                                    <span class="lang-node active" data-lang="en">Beautiful, auto-generated line charts that show your spending trends across weeks.</span>
+                                    <span class="lang-node" data-lang="vi">Biểu đồ đường trực quan, tự động hiển thị xu hướng chi tiêu của bạn qua từng tuần.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6">
+                            <div class="bg-nord8/10 p-4 h-fit">
+                                <i data-lucide="download-cloud" class="w-6 h-6 text-nord8"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2 uppercase tracking-wide" data-en="Full Data Export" data-vi="Xuất dữ liệu toàn diện">Full Data Export</h4>
+                                <p class="text-nord4 text-sm font-light leading-relaxed">
+                                    <span class="lang-node active" data-lang="en">Your data belongs to you. Export to CSV, JSON or Excel with one single click.</span>
+                                    <span class="lang-node" data-lang="vi">Dữ liệu thuộc về bạn. Xuất sang CSV, JSON hoặc Excel chỉ với một cú nhấp chuột.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SVG LIVE ANALYTICS CHART -->
+                <div id="statsChart" class="bg-[#2a2f3a] p-10 border border-[#3b4252] relative reveal min-h-[400px] flex flex-col">
+                    <div class="flex justify-end mb-6">
+                        <span class="text-[10px] font-bold tracking-[0.2em] text-[#eceff4] opacity-80">LIVE ANALYTICS</span>
+                    </div>
+                    <div class="relative flex-grow border border-[#3b4252]/50 flex flex-col justify-end p-6">
+                        <svg viewBox="0 0 400 200" class="w-full h-full overflow-visible">
+                            <!-- Subtle Grid -->
+                            <line x1="0" y1="0" x2="400" y2="0" stroke="#3b4252" stroke-width="0.5" />
+                            <line x1="0" y1="50" x2="400" y2="50" stroke="#3b4252" stroke-width="0.5" />
+                            <line x1="0" y1="100" x2="400" y2="100" stroke="#3b4252" stroke-width="0.5" />
+                            <line x1="0" y1="150" x2="400" y2="150" stroke="#3b4252" stroke-width="0.5" />
+
+                            <!-- The Chart Line -->
+                            <path class="chart-path" d="M20,160 L80,140 L140,155 L200,60 L260,90 L320,30 L380,110" 
+                                  fill="none" stroke="#88C0D0" stroke-width="2" />
+                            
+                            <!-- Day Labels -->
+                            <g class="text-[10px] font-mono" fill="#eceff4">
+                                <text x="20" y="190" text-anchor="middle" opacity="0.8">MON</text>
+                                <text x="80" y="190" text-anchor="middle" opacity="0.8">TUE</text>
+                                <text x="140" y="190" text-anchor="middle" opacity="0.8">WED</text>
+                                <text x="200" y="190" text-anchor="middle" opacity="0.8">THU</text>
+                                <text x="260" y="190" text-anchor="middle" opacity="0.8">FRI</text>
+                                <text x="320" y="190" text-anchor="middle" opacity="0.8">SAT</text>
+                                <text x="380" y="190" text-anchor="middle" opacity="0.8">SUN</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="how-it-works" class="py-32 bg-nord1/10">
+        <div class="max-w-4xl mx-auto text-center px-6 reveal">
+            <h2 class="text-xs uppercase tracking-[0.5em] text-nord8 mb-8" data-en="Design Philosophy" data-vi="Triết lý thiết kế">Design Philosophy</h2>
+            <p class="text-2xl md:text-4xl font-light leading-snug text-nord6 mb-12">
+                <span class="lang-node active" data-lang="en">"Tracking shouldn't be a chore. It must be so fast you <span class="font-bold text-nord8">don't even feel</span> it."</span>
+                <span class="lang-node" data-lang="vi">"Quản lý chi tiêu không nên là gánh nặng. Nó phải nhanh đến mức bạn <span class="font-bold text-nord8">không cảm thấy</span> mình đang làm việc đó."</span>
+            </p>
+            <div class="flex justify-center gap-12">
+                <div class="text-left">
+                    <span class="block text-3xl font-black text-nord8">0.1s</span>
+                    <span class="text-[9px] uppercase tracking-widest text-nord3">Latency</span>
+                </div>
+                <div class="text-left">
+                    <span class="block text-3xl font-black text-nord8">100%</span>
+                    <span class="text-[9px] uppercase tracking-widest text-nord3">Local-First</span>
+                </div>
+                <div class="text-left">
+                    <span class="block text-3xl font-black text-nord8">ZERO</span>
+                    <span class="text-[9px] uppercase tracking-widest text-nord3">Friction</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-48 px-6 bg-nord0">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight" data-en="READY TO SAVE TIME?" data-vi="SẴN SÀNG TIẾT KIỆM THỜI GIAN?">READY TO SAVE TIME?</h2>
+            <p class="text-nord4/60 mb-16 font-light text-lg" data-en="Start managing your finances the modern way. Free and secure on your device." data-vi="Bắt đầu quản lý tài chính theo cách hiện đại. Miễn phí và an toàn trên thiết bị của bạn.">Start managing your finances the modern way. Free and secure on your device.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-24">
+                <a href="#" class="download-link flex items-center gap-4 group">
+                    <i data-lucide="apple" class="w-8 h-8"></i>
+                    <span class="text-sm font-bold tracking-[0.2em] uppercase">APP STORE</span>
+                </a>
+                <a href="#" class="download-link flex items-center gap-4 group">
+                    <!-- Improved Google Play Icon -->
+                    <i data-lucide="play" class="w-8 h-8"></i>
+                    <span class="text-sm font-bold tracking-[0.2em] uppercase">GOOGLE PLAY</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-nord3/10 px-6 bg-nord0">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-nord3 font-bold text-[10px] uppercase tracking-widest">
+                &copy; 2026 ZENITH STUDIO • NANOSECOND PROJECT
+            </div>
+            <div class="flex gap-12 text-nord3 font-bold text-[10px] uppercase tracking-widest">
+                <a href="#" class="hover:text-nord4">PRIVACY</a>
+                <a href="#" class="hover:text-nord4">SUPPORT</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Language Logic
+        const langToggle = document.getElementById('langToggle');
+        const langNodes = document.querySelectorAll('.lang-node');
+        const inputMockup = document.getElementById('inputMockup');
+        let currentLang = 'en';
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'vi' : 'en';
+            langNodes.forEach(node => node.classList.toggle('active', node.getAttribute('data-lang') === currentLang));
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = el.getAttribute(`data-${currentLang}`);
+                if (text) el.innerText = text;
+            });
+            inputMockup.innerText = (currentLang === 'en') ? '20 bucks breakfast' : '20k ăn sáng';
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.id === 'statsChart') {
+                        entry.target.classList.add('active-chart');
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        observer.observe(document.getElementById('statsChart'));
+
+        window.addEventListener('load', () => {
+            const chart = document.getElementById('statsChart');
+            if (chart.getBoundingClientRect().top < window.innerHeight) {
+                chart.classList.add('visible');
+                chart.classList.add('active-chart');
+            }
+        });
+    </script>
+</body>
+</html>
