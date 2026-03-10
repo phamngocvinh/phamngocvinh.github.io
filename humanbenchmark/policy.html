@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Human Benchmark</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nord0: #2e3440;
+            --nord1: #3b4252;
+            --nord2: #434c5e;
+            --nord3: #4c566a;
+            --nord4: #d8dee9;
+            --nord6: #eceff4;
+            --nord8: #88c0d0;
+            --nord10: #5e81ac;
+            --nord13: #ebcb8b;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--nord0);
+            color: var(--nord4);
+            line-height: 1.7;
+        }
+        .policy-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .lang-switch {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+        }
+        .glass-card {
+            background: rgba(59, 66, 82, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(136, 192, 208, 0.1);
+            padding: 3rem;
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: var(--nord6);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .highlight {
+            color: var(--nord8);
+        }
+        .warning-box {
+            border-left: 4px solid var(--nord13);
+            background: rgba(235, 203, 139, 0.1);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        [lang="vi"] { display: none; }
+        
+        @media (max-width: 640px) {
+            .glass-card { padding: 1.5rem; }
+            .lang-switch { top: 1rem; right: 1rem; }
+        }
+    </style>
+</head>
+<body class="selection:bg-nord8 selection:text-nord0">
+
+    <!-- Language Toggle -->
+    <div class="lang-switch">
+        <button id="toggleLang" class="bg-nord2 hover:bg-nord3 text-nord6 px-4 py-2 text-xs font-bold tracking-widest border border-nord8/20 transition-all uppercase rounded shadow-lg">
+            Switch to Tiếng Việt
+        </button>
+    </div>
+
+    <div class="policy-container">
+        <!-- Header -->
+        <header class="mb-16 text-center">
+            <div class="w-12 h-1 bg-nord8 mx-auto mb-8"></div>
+            <h1 class="text-4xl mb-4 uppercase tracking-tighter">Privacy Policy</h1>
+            <p class="text-nord3 text-sm tracking-widest uppercase">Human Benchmark • Cognitive Performance Tracking</p>
+        </header>
+
+        <main class="glass-card">
+            <!-- English Version -->
+            <div id="en-content" lang="en">
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">Nature of Service</h2>
+                    <p class="mb-4"><span class="highlight">Human Benchmark</span> is a tool designed to measure cognitive abilities such as reaction time, memory, and focus. This application is for <span class="highlight">personal growth and entertainment</span> purposes only.</p>
+                </section>
+
+                <div class="warning-box">
+                    <h3 class="text-sm uppercase tracking-widest mb-2 text-nord13">Medical Disclaimer</h3>
+                    <p class="text-sm">This app is not a medical diagnostic tool. Results may vary based on hardware, environment, and physical condition. Please consult a professional for medical concerns.</p>
+                </div>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">1. Data Collection</h2>
+                    <p class="mb-4">We value your privacy. Our data practices are minimal:</p>
+                    <ul class="list-disc ml-6 space-y-2 text-nord3">
+                        <li><strong>No Personal Identification:</strong> We do not require accounts, names, or contact information.</li>
+                        <li><strong>Performance Data:</strong> Your test scores are stored <span class="highlight">locally</span> on your device.</li>
+                        <li><strong>Anonymous Analytics:</strong> We may collect basic crash reports or device types to improve app stability, without linking to you.</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">2. Data Security</h2>
+                    <p>Since your scores are kept on your device, deleting the app will result in the permanent loss of your history unless you use a cloud backup service provided by your OS (Google Play Games / Apple Game Center).</p>
+                </section>
+
+                <footer class="mt-16 pt-8 border-t border-nord3/20 text-xs text-nord3">
+                    Last updated: March 2024 • Human Benchmark Team
+                </footer>
+            </div>
+
+            <!-- Vietnamese Version -->
+            <div id="vi-content" lang="vi">
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">Bản chất Dịch vụ</h2>
+                    <p class="mb-4"><span class="highlight">Human Benchmark</span> là một công cụ được thiết kế để đo lường các khả năng nhận thức như thời gian phản xạ, trí nhớ và sự tập trung. Ứng dụng này chỉ phục vụ mục đích <span class="highlight">giải trí và phát triển cá nhân</span>.</p>
+                </section>
+
+                <div class="warning-box">
+                    <h3 class="text-sm uppercase tracking-widest mb-2 text-nord13">Miễn trừ Y tế</h3>
+                    <p class="text-sm">Ứng dụng này không phải là công cụ chẩn đoán y tế. Kết quả có thể thay đổi tùy thuộc vào phần cứng, môi trường và tình trạng thể chất. Vui lòng tham khảo ý kiến chuyên gia nếu có thắc mắc về sức khỏe.</p>
+                </div>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">1. Thu thập Dữ liệu</h2>
+                    <p class="mb-4">Chúng tôi tôn trọng quyền riêng tư của bạn:</p>
+                    <ul class="list-disc ml-6 space-y-2 text-nord3">
+                        <li><strong>Không định danh:</strong> Chúng tôi không yêu cầu tài khoản, tên hoặc thông tin liên lạc.</li>
+                        <li><strong>Dữ liệu hiệu suất:</strong> Kết quả các bài kiểm tra của bạn được lưu trữ <span class="highlight">cục bộ</span> trên thiết bị.</li>
+                        <li><strong>Phân tích ẩn danh:</strong> Chúng tôi có thể thu thập báo cáo lỗi cơ bản hoặc loại thiết bị để cải thiện độ ổn định mà không liên kết với danh tính của bạn.</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl mb-6 border-b border-nord3/30 pb-2">2. Bảo mật Dữ liệu</h2>
+                    <p>Vì điểm số được giữ trên thiết bị của bạn, việc xóa ứng dụng sẽ dẫn đến mất vĩnh viễn lịch sử trừ khi bạn sử dụng dịch vụ sao lưu đám mây của hệ điều hành (Google Play Games / Apple Game Center).</p>
+                </section>
+
+                <footer class="mt-16 pt-8 border-t border-nord3/20 text-xs text-nord3">
+                    Cập nhật lần cuối: Tháng 3, 2024 • Đội ngũ Human Benchmark
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const btn = document.getElementById('toggleLang');
+        const enContent = document.getElementById('en-content');
+        const viContent = document.getElementById('vi-content');
+        let currentLang = 'en';
+
+        btn.addEventListener('click', () => {
+            if (currentLang === 'en') {
+                enContent.style.display = 'none';
+                viContent.style.display = 'block';
+                btn.innerText = 'Chuyển sang English';
+                currentLang = 'vi';
+            } else {
+                enContent.style.display = 'block';
+                viContent.style.display = 'none';
+                btn.innerText = 'Switch to Tiếng Việt';
+                currentLang = 'en';
+            }
+        });
+    </script>
+</body>
+</html>
