@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Benchmark | The Ultimate Cognitive Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        :root {
+            --nord0: #2e3440;
+            --nord1: #3b4252;
+            --nord2: #434c5e;
+            --nord3: #4c566a;
+            --nord4: #d8dee9;
+            --nord6: #eceff4;
+            --nord8: #88c0d0;
+            --nord9: #81a1c1;
+            --nord10: #5e81ac;
+            --nord13: #ebcb8b;
+            --nord14: #a3be8c;
+        }
+
+        body {
+            background-color: var(--nord0);
+            color: var(--nord4);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .nord-text-bright { color: var(--nord6); }
+        .nord-text-accent { color: var(--nord8); }
+        .nord-border { border-color: var(--nord3); }
+        
+        .glass-card {
+            background: rgba(59, 66, 82, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(136, 192, 208, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            background: rgba(59, 66, 82, 0.6);
+            border-color: var(--nord8);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% -20%, rgba(136, 192, 208, 0.15) 0%, transparent 50%);
+        }
+
+        .feature-icon {
+            background: linear-gradient(135deg, var(--nord1) 0%, var(--nord2) 100%);
+        }
+
+        .cta-button {
+            background-color: var(--nord8);
+            color: var(--nord0);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--nord9);
+            transform: scale(1.05);
+        }
+
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Language Switcher Styling */
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: var(--nord1);
+            border: 1px solid var(--nord3);
+            border-radius: 8px;
+            margin-top: 8px;
+            overflow: hidden;
+            min-width: 120px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .lang-dropdown.show { display: block; }
+        .lang-item {
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 11px;
+            transition: background 0.2s;
+        }
+        .lang-item:hover { background: var(--nord2); }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#88c0d0] selection:text-[#2e3440]">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-6 transition-all duration-300 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-extrabold tracking-[0.1em] nord-text-bright flex items-center">
+                <i data-lucide="brain" class="w-6 h-6 mr-2 text-[#88c0d0]"></i>HUMAN BENCHMARK.
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-[11px] uppercase tracking-widest font-bold">
+                <a href="#benchmarks" class="hover:text-[#88c0d0] transition-colors" data-i18n="nav-tests">Tests</a>
+                <a href="#about" class="hover:text-[#88c0d0] transition-colors" data-i18n="nav-about">About</a>
+                <a href="#download" class="hover:text-[#88c0d0] transition-colors text-[#88c0d0]" data-i18n="nav-download">Download</a>
+                
+                <!-- Language Switcher -->
+                <div class="relative ml-4">
+                    <button id="langToggle" class="flex items-center space-x-1 border border-nord3 px-3 py-1 rounded-full hover:border-nord8 transition-colors">
+                        <i data-lucide="languages" class="w-3 h-3"></i>
+                        <span id="currentLangLabel">EN</span>
+                        <i data-lucide="chevron-down" class="w-3 h-3 opacity-50"></i>
+                    </button>
+                    <div id="langDropdown" class="lang-dropdown">
+                        <div class="lang-item" onclick="changeLang('en')">English</div>
+                        <div class="lang-item" onclick="changeLang('vi')">Tiếng Việt</div>
+                        <div class="lang-item" onclick="changeLang('ja')">日本語</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center px-6 hero-gradient pt-20">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="text-center lg:text-left">
+                <p class="text-xs nord-text-accent font-mono mb-4 tracking-[0.3em] uppercase" data-i18n="hero-tagline">// Brain Performance Benchmarking</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold nord-text-bright mb-6 leading-tight" id="hero-title">
+                    Measure your <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#88c0d0] to-[#a3be8c]">brain's limits.</span>
+                </h1>
+                <p class="text-lg text-gray-400 mb-10 leading-relaxed font-light max-w-xl mx-auto lg:mx-0" data-i18n="hero-desc">
+                    Human Benchmark is the standard tool for testing reaction time, memory, and cognitive processing. Are you truly above average?
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <a href="#download" class="cta-button px-10 py-5 rounded-2xl font-bold uppercase text-xs tracking-widest flex items-center" data-i18n="hero-cta">
+                        Test Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center">
+                <div class="glass-card w-full max-w-md p-8 rounded-[3rem] border-nord8/20">
+                    <div class="flex flex-col items-center py-10">
+                        <div class="relative mb-10">
+                            <i data-lucide="zap" class="w-32 h-32 text-[#ebcb8b] pulse"></i>
+                        </div>
+                        <div class="w-full space-y-4">
+                            <div class="h-4 bg-nord2 rounded-full w-full overflow-hidden">
+                                <div class="h-full bg-nord8 w-5/6"></div>
+                            </div>
+                            <div class="flex justify-between text-[10px] font-mono uppercase tracking-widest text-nord3">
+                                <span data-i18n="hero-score">Ranking Score</span>
+                                <span data-i18n="hero-percentile">Top 12% Worldwide</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benchmarks Section -->
+    <section id="benchmarks" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-xs uppercase tracking-[0.4em] text-gray-500 mb-4" data-i18n="tests-label">The Tests</h2>
+                <h3 class="text-4xl font-bold nord-text-bright text-center" data-i18n="tests-title">Human Benchmark Tests</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-10 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl feature-icon flex items-center justify-center mb-8">
+                        <i data-lucide="zap" class="w-7 h-7 text-[#ebcb8b]"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold nord-text-bright mb-4" data-i18n="test-1-title">Reaction Time</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6" data-i18n="test-1-desc">Measure your physical response time to rapid visual stimuli.</p>
+                </div>
+                <div class="glass-card p-10 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl feature-icon flex items-center justify-center mb-8">
+                        <i data-lucide="grid" class="w-7 h-7 text-[#88c0d0]"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold nord-text-bright mb-4" data-i18n="test-2-title">Visual Memory</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6" data-i18n="test-2-desc">Explore your brain's ability to store and recall spatial visual patterns.</p>
+                </div>
+                <div class="glass-card p-10 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl feature-icon flex items-center justify-center mb-8">
+                        <i data-lucide="type" class="w-7 h-7 text-[#a3be8c]"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold nord-text-bright mb-4" data-i18n="test-3-title">Verbal Memory</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6" data-i18n="test-3-desc">Evaluate your ability to memorize words and recognize new vs. old linguistic info.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-40 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-5xl font-extrabold nord-text-bright mb-8" data-i18n="dl-title">Improve your stats.</h2>
+            <p class="text-gray-400 mb-16 text-lg" data-i18n="dl-desc">Download Human Benchmark and begin your brain optimization journey today.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a href="#" class="cta-button px-12 py-6 rounded-2xl font-bold flex items-center w-full md:w-auto justify-center">
+                    <i data-lucide="play" class="w-5 h-5 mr-3 fill-current"></i> Google Play
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 border-t border-[#3b4252]/30 bg-[#2e3440]">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-gray-600 gap-8">
+            <div class="flex items-center font-bold nord-text-bright">
+                HUMAN BENCHMARK BY ZENITH STUDIO
+            </div>
+            <div class="flex space-x-10">
+                <a href="policy.html" class="hover:text-white transition-colors" data-i18n="footer-privacy">Privacy Policy</a>
+                <a href="../zenith/" class="hover:text-white transition-colors" data-i18n="footer-contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Multi-language content
+        const translations = {
+            en: {
+                "nav-tests": "Tests",
+                "nav-about": "About",
+                "nav-download": "Download",
+                "hero-tagline": "// Brain Performance Benchmarking",
+                "hero-title": 'Measure your <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#88c0d0] to-[#a3be8c]">brain\'s limits.</span>',
+                "hero-desc": "Human Benchmark is the standard tool for testing reaction time, memory, and cognitive processing. Are you truly above average?",
+                "hero-cta": "Test Now",
+                "hero-score": "Ranking Score",
+                "hero-percentile": "Top 12% Worldwide",
+                "tests-label": "The Tests",
+                "tests-title": "Human Benchmark Tests",
+                "test-1-title": "Reaction Time",
+                "test-1-desc": "Measure your physical response time to rapid visual stimuli.",
+                "test-2-title": "Visual Memory",
+                "test-2-desc": "Explore your brain's ability to store and recall spatial visual patterns.",
+                "test-3-title": "Verbal Memory",
+                "test-3-desc": "Evaluate your ability to memorize words and recognize new vs. old linguistic info.",
+                "dl-title": "Improve your stats.",
+                "dl-desc": "Download Human Benchmark and begin your brain optimization journey today.",
+                "footer-privacy": "Privacy Policy",
+                "footer-contact": "Contact"
+            },
+            vi: {
+                "nav-tests": "Thử thách",
+                "nav-about": "Về dự án",
+                "nav-download": "Tải ứng dụng",
+                "hero-tagline": "// Đo lường hiệu suất não bộ",
+                "hero-title": 'Đo lường <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#88c0d0] to-[#a3be8c]">giới hạn não bộ</span> của bạn.',
+                "hero-desc": "Human Benchmark là công cụ tiêu chuẩn để kiểm tra tốc độ phản xạ, khả năng ghi nhớ và xử lý thông tin. Bạn có thực sự vượt trội hơn mức trung bình?",
+                "hero-cta": "Kiểm tra ngay",
+                "hero-score": "Điểm xếp hạng",
+                "hero-percentile": "Top 12% Toàn cầu",
+                "tests-label": "Danh sách",
+                "tests-title": "Các bài kiểm tra Human Benchmark",
+                "test-1-title": "Phản xạ nhanh",
+                "test-1-desc": "Xác định thời gian phản ứng vật lý của bạn trước các kích thích thị giác nhanh chóng.",
+                "test-2-title": "Trí nhớ hình ảnh",
+                "test-2-desc": "Khám phá khả năng lưu trữ và tái hiện các mẫu hình ảnh không gian của bộ não.",
+                "test-3-title": "Trí nhớ từ vựng",
+                "test-3-desc": "Đánh giá khả năng ghi nhớ từ ngữ và nhận diện thông tin ngôn ngữ mới/cũ.",
+                "dl-title": "Cải thiện chỉ số của bạn.",
+                "dl-desc": "Tải xuống Human Benchmark và bắt đầu hành trình tối ưu hóa hiệu suất não bộ ngay hôm nay.",
+                "footer-privacy": "Chính sách bảo mật",
+                "footer-contact": "Liên hệ"
+            },
+            ja: {
+                "nav-tests": "テスト",
+                "nav-about": "プロジェクト",
+                "nav-download": "ダウンロード",
+                "hero-tagline": "// 脳パフォーマンスのベンチマーク",
+                "hero-title": 'あなたの<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#88c0d0] to-[#a3be8c]">脳の限界</span>を測定。',
+                "hero-desc": "Human Benchmarkは、反応速度、記憶力、認知処理をテストするための標準ツールです。あなたは本当に平均以上ですか？",
+                "hero-cta": "今すぐテスト",
+                "hero-score": "ランキングスコア",
+                "hero-percentile": "世界トップ 12%",
+                "tests-label": "テスト一覧",
+                "tests-title": "ベンチマークテスト",
+                "test-1-title": "反応速度",
+                "test-1-desc": "視覚刺激に対する身体的な反応時間をミリ秒単位で測定します。",
+                "test-2-title": "視覚記憶",
+                "test-2-desc": "空間的な視覚パターンを保存し、想起する脳の能力を探ります。",
+                "test-3-title": "言語記憶",
+                "test-3-desc": "単語を記憶し、新しい言語情報と古い言語情報を識別する能力を評価します。",
+                "dl-title": "統計を改善する。",
+                "dl-desc": "Human Benchmarkをダウンロードして、今すぐ脳の最適化の旅を始めましょう。",
+                "footer-privacy": "プライバシーポリシー",
+                "footer-contact": "お問い合わせ"
+            }
+        };
+
+        // Language toggle logic
+        const langToggle = document.getElementById('langToggle');
+        const langDropdown = document.getElementById('langDropdown');
+        const currentLangLabel = document.getElementById('currentLangLabel');
+
+        langToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('show');
+        });
+
+        document.addEventListener('click', () => {
+            langDropdown.classList.remove('show');
+        });
+
+        function changeLang(lang) {
+            currentLangLabel.innerText = lang.toUpperCase();
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Special case for hero title as it contains nested span
+            if (translations[lang]['hero-title']) {
+                document.getElementById('hero-title').innerHTML = translations[lang]['hero-title'];
+            }
+        }
+    </script>
+</body>
+</html>
