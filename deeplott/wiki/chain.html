@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuỗi Dẫn-Theo - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Phân tích Chuỗi Dẫn-Theo</h1>
+                <p class="subtitle">Mối liên hệ thời gian giữa các kỳ quay liên tiếp</p>
+            </div>
+            <div class="content-body">
+                <p><i class="fas fa-link"></i> Phân tích chuỗi (Chain Analysis) xem xét mối quan hệ "Nhân - Quả" về mặt thời gian: Nếu kỳ trước ra số A, thì kỳ sau thường ra số gì?</p>
+
+                <h2>1. Xác suất Dẫn-Theo (Lead-Follow Probability)</h2>
+                <p>Chúng ta tính toán xác suất có điều kiện: $P(B_{kỳ này} | A_{kỳ trước})$. Nghĩa là xác suất số B xuất hiện hôm nay khi biết hôm qua đã ra số A.</p>
+                
+                <div class="math-block">
+                    $P(B|A) = \frac{\text{Số lần B ra ngay sau A}}{\text{Tổng số lần A xuất hiện}}$
+                </div>
+
+                <div class="example-box">
+                    <h4><i class="fas fa-project-diagram"></i> Ví dụ chuỗi</h4>
+                    <p>Giả sử số <strong>12</strong> đã xuất hiện 100 lần trong lịch sử. Trong 100 lần đó, có 15 lần số <strong>45</strong> xuất hiện ngay ở kỳ kế tiếp.<br>
+                    => Xác suất <strong>12 dẫn 45</strong> là <strong>15%</strong>.</p>
+                    <p>Trong Deeplott, chúng tôi hiển thị những "người theo sau" tiềm năng nhất cho bộ số của kỳ quay gần nhất để bạn có gợi ý cho kỳ quay tiếp theo.</p>
+                </div>
+
+                <h2>2. Ứng dụng với Số Đặc Biệt (Lotto 5/35)</h2>
+                <p>Với các loại hình có số đặc biệt, chuỗi dẫn-theo còn được tính riêng cho quả bóng này. Do tập số đặc biệt nhỏ (ví dụ 1-10), các chuỗi lặp lại thường rõ ràng và dễ nhận thấy hơn.</p>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

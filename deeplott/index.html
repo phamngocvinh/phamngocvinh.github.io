@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,10 +31,18 @@
             scroll-behavior: smooth;
         }
 
-        .nord-text-bright { color: var(--nord6); }
-        .nord-text-accent { color: var(--nord8); }
-        .nord-border { border-color: var(--nord3); }
-        
+        .nord-text-bright {
+            color: var(--nord6);
+        }
+
+        .nord-text-accent {
+            color: var(--nord8);
+        }
+
+        .nord-border {
+            border-color: var(--nord3);
+        }
+
         .glass-card {
             background: rgba(59, 66, 82, 0.4);
             backdrop-filter: blur(12px);
@@ -74,6 +83,7 @@
         }
     </style>
 </head>
+
 <body class="antialiased selection:bg-[#88c0d0] selection:text-[#2e3440]">
 
     <!-- Navigation -->
@@ -83,6 +93,7 @@
             <div class="hidden md:flex space-x-10 text-[11px] uppercase tracking-widest font-semibold">
                 <a href="#features" class="hover:text-[#88c0d0] transition-colors">Tính năng</a>
                 <a href="#why-us" class="hover:text-[#88c0d0] transition-colors">Tại sao chọn Deeplott</a>
+                <a href="#wiki" id="nav-wiki" class="hover:text-[#88c0d0] transition-colors"></a>
                 <a href="#download" class="hover:text-[#88c0d0] transition-colors">Tải ngay</a>
             </div>
         </div>
@@ -92,18 +103,24 @@
     <section class="min-h-screen flex items-center px-6 hero-gradient pt-20">
         <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-                <p class="text-sm nord-text-accent font-mono mb-4 tracking-tight">// Dữ liệu lớn cho quyết định thông minh</p>
+                <p class="text-sm nord-text-accent font-mono mb-4 tracking-tight">// Dữ liệu lớn cho quyết định thông
+                    minh</p>
                 <h1 class="text-5xl md:text-6xl font-bold nord-text-bright mb-6 leading-[1.1]">
-                    Biến những con số khô khan thành <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#88c0d0] to-[#a3be8c]">cơ hội thực tế.</span>
+                    Biến những con số khô khan thành <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-[#88c0d0] to-[#a3be8c]">cơ hội thực
+                        tế.</span>
                 </h1>
                 <p class="text-lg text-gray-400 mb-10 leading-relaxed font-light">
-                    Deeplott là trợ lý hàng đầu giúp bạn theo dõi, phân tích và giải mã quy luật Vietlott dựa trên nền tảng Big Data. Chơi khoa học thay vì chỉ dựa vào may mắn.
+                    Deeplott là trợ lý hàng đầu giúp bạn theo dõi, phân tích và giải mã quy luật Vietlott dựa trên nền
+                    tảng Big Data. Chơi khoa học thay vì chỉ dựa vào may mắn.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#download" class="cta-button px-8 py-4 rounded-xl font-bold uppercase text-xs tracking-widest flex items-center">
+                    <a href="#download"
+                        class="cta-button px-8 py-4 rounded-xl font-bold uppercase text-xs tracking-widest flex items-center">
                         <i data-lucide="download" class="w-4 h-4 mr-2"></i> Tải Deeplott Ngay
                     </a>
-                    <a href="#features" class="px-8 py-4 border border-[#4c566a] rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-[#3b4252] transition-colors">
+                    <a href="#features"
+                        class="px-8 py-4 border border-[#4c566a] rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-[#3b4252] transition-colors">
                         Khám phá tính năng
                     </a>
                 </div>
@@ -112,7 +129,8 @@
                 <div class="glass-card p-4 rounded-[2rem] relative z-10">
                     <div class="bg-[#2e3440] rounded-xl overflow-hidden border nord-border">
                         <div class="p-6 border-b nord-border flex justify-between items-center">
-                            <span class="text-xs font-mono text-gray-500 uppercase tracking-tighter">Heatmap_Matrix_Analysis</span>
+                            <span
+                                class="text-xs font-mono text-gray-500 uppercase tracking-tighter">Heatmap_Matrix_Analysis</span>
                             <div class="flex space-x-1">
                                 <div class="w-2 h-2 rounded-full bg-[#bf616a]"></div>
                                 <div class="w-2 h-2 rounded-full bg-[#ebcb8b]"></div>
@@ -121,7 +139,7 @@
                         </div>
                         <div class="p-8 grid grid-cols-7 gap-2">
                             <script>
-                                for(let i=1; i<=35; i++) {
+                                for (let i = 1; i <= 35; i++) {
                                     const op = Math.random();
                                     document.write(`<div class="h-8 rounded-sm bg-[#88c0d0]" style="opacity: ${op < 0.2 ? 0.1 : op}"></div>`);
                                 }
@@ -150,7 +168,8 @@
                         <i data-lucide="grid" class="w-6 h-6 nord-text-accent"></i>
                     </div>
                     <h4 class="text-xl font-bold nord-text-bright mb-4">Bản đồ Nhiệt (Heatmap)</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Nhận diện vùng "Số Nóng" dày đặc và vùng "Số Lạnh" đã lâu chưa về qua tần suất và độ trễ.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Nhận diện vùng "Số Nóng" dày đặc và vùng "Số Lạnh"
+                        đã lâu chưa về qua tần suất và độ trễ.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -159,7 +178,8 @@
                         <i data-lucide="bar-chart-2" class="w-6 h-6 nord-text-accent"></i>
                     </div>
                     <h4 class="text-xl font-bold nord-text-bright mb-4">Thống kê & Biểu đồ</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Theo dõi biến thiên tổng giá trị, chẵn/lẻ, to/xỉu và các cặp số thường xuyên xuất hiện cùng nhau.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Theo dõi biến thiên tổng giá trị, chẵn/lẻ, to/xỉu
+                        và các cặp số thường xuyên xuất hiện cùng nhau.</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -168,7 +188,8 @@
                         <i data-lucide="alert-triangle" class="w-6 h-6 nord-text-accent"></i>
                     </div>
                     <h4 class="text-xl font-bold nord-text-bright mb-4">Cảnh báo Ngưỡng rơi</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Tự động báo động khi một bộ số sắp chạm ngưỡng kỷ lục "gan", giúp nắm bắt thời điểm vàng.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Tự động báo động khi một bộ số sắp chạm ngưỡng kỷ
+                        lục "gan", giúp nắm bắt thời điểm vàng.</p>
                 </div>
 
                 <!-- Feature 4 -->
@@ -177,7 +198,8 @@
                         <i data-lucide="trending-up" class="w-6 h-6 nord-text-accent"></i>
                     </div>
                     <h4 class="text-xl font-bold nord-text-bright mb-4">Số Kéo & Số Nợ</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Khám phá thuật toán dẫn dắt Lead & Follow và chỉ số Overdue để đánh giá độ "khát" của số.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Khám phá thuật toán dẫn dắt Lead & Follow và chỉ số
+                        Overdue để đánh giá độ "khát" của số.</p>
                 </div>
 
                 <!-- Feature 5 -->
@@ -186,7 +208,8 @@
                         <i data-lucide="shield-check" class="w-6 h-6 nord-text-accent"></i>
                     </div>
                     <h4 class="text-xl font-bold nord-text-bright mb-4">Kiểm tra Chất lượng</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Chấm điểm bộ số dựa trên lịch sử trúng thưởng và các chỉ số thống kê xác suất thực tế.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Chấm điểm bộ số dựa trên lịch sử trúng thưởng và
+                        các chỉ số thống kê xác suất thực tế.</p>
                 </div>
 
                 <!-- Feature 6 -->
@@ -195,7 +218,8 @@
                         <i data-lucide="heart" class="w-6 h-6 nord-text-accent"></i>
                     </div>
                     <h4 class="text-xl font-bold nord-text-bright mb-4">Quản lý Yêu thích</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Lưu trữ không giới hạn bộ số tâm đắc, hỗ trợ soạn tin nhắn mua vé SMS nhanh và chính xác.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Lưu trữ không giới hạn bộ số tâm đắc, hỗ trợ soạn
+                        tin nhắn mua vé SMS nhanh và chính xác.</p>
                 </div>
             </div>
         </div>
@@ -213,28 +237,32 @@
                             <div class="mt-1"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#a3be8c]"></i></div>
                             <div>
                                 <span class="block font-bold nord-text-bright">Dữ liệu chính xác</span>
-                                <span class="text-sm text-gray-500">Cập nhật kết quả Vietlott mới nhất ngay sau mỗi kỳ quay số.</span>
+                                <span class="text-sm text-gray-500">Cập nhật kết quả Vietlott mới nhất ngay sau mỗi kỳ
+                                    quay số.</span>
                             </div>
                         </li>
                         <li class="flex items-start space-x-4">
                             <div class="mt-1"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#a3be8c]"></i></div>
                             <div>
                                 <span class="block font-bold nord-text-bright">Trực quan hóa dữ liệu</span>
-                                <span class="text-sm text-gray-500">Biến các bảng số phức tạp thành biểu đồ trực quan, dễ hiểu.</span>
+                                <span class="text-sm text-gray-500">Biến các bảng số phức tạp thành biểu đồ trực quan,
+                                    dễ hiểu.</span>
                             </div>
                         </li>
                         <li class="flex items-start space-x-4">
                             <div class="mt-1"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#a3be8c]"></i></div>
                             <div>
                                 <span class="block font-bold nord-text-bright">Bảo mật & Riêng tư</span>
-                                <span class="text-sm text-gray-500">Dữ liệu cá nhân và bộ số yêu thích của bạn được mã hóa an toàn tuyệt đối.</span>
+                                <span class="text-sm text-gray-500">Dữ liệu cá nhân và bộ số yêu thích của bạn được mã
+                                    hóa an toàn tuyệt đối.</span>
                             </div>
                         </li>
                         <li class="flex items-start space-x-4">
                             <div class="mt-1"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#a3be8c]"></i></div>
                             <div>
                                 <span class="block font-bold nord-text-bright">Cập nhật liên tục</span>
-                                <span class="text-sm text-gray-500">Hệ thống thuật toán phân tích được tối ưu hóa dựa trên biến động dữ liệu mới nhất.</span>
+                                <span class="text-sm text-gray-500">Hệ thống thuật toán phân tích được tối ưu hóa dựa
+                                    trên biến động dữ liệu mới nhất.</span>
                             </div>
                         </li>
                     </ul>
@@ -253,41 +281,107 @@
         </div>
     </section>
 
+    <!-- Section Giới thiệu Wiki -->
+    <section id="wiki" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <!-- Minh họa trực quan cho Wiki -->
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-[#88c0d0] to-[#a3be8c] rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
+                    </div>
+                    <div class="glass-card p-8 rounded-[2rem] relative z-10">
+                        <div class="flex flex-col space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-[#88c0d0]/20 flex items-center justify-center">
+                                    <i data-lucide="book-open" class="w-5 h-5 text-[#88c0d0]"></i>
+                                </div>
+                                <span id="wiki-illu-title"
+                                    class="text-[10px] font-mono text-gray-500 uppercase tracking-widest"></span>
+                            </div>
+                            <div class="space-y-3 font-mono text-[9px]">
+                                <div id="wiki-illu-1" class="text-[#88c0d0]/70"></div>
+                                <div id="wiki-illu-2" class="text-[#a3be8c]/70"></div>
+                                <div id="wiki-illu-3" class="text-[#ebcb8b]/70"></div>
+                            </div>
+                            <div class="pt-4 grid grid-cols-2 gap-4">
+                                <div
+                                    class="p-4 bg-[#2e3440] rounded-xl border border-[#4c566a] flex flex-col items-center">
+                                    <i data-lucide="sigma" class="w-6 h-6 text-[#ebcb8b] mb-2"></i>
+                                    <span id="label-poisson"
+                                        class="text-[8px] uppercase tracking-tighter text-gray-500"></span>
+                                </div>
+                                <div
+                                    class="p-4 bg-[#2e3440] rounded-xl border border-[#4c566a] flex flex-col items-center">
+                                    <i data-lucide="line-chart" class="w-6 h-6 text-[#a3be8c] mb-2"></i>
+                                    <span id="label-knn"
+                                        class="text-[8px] uppercase tracking-tighter text-gray-500"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nội dung văn bản giới thiệu Wiki -->
+                <div>
+                    <h2 id="wiki-tag" class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Knowledge & Theory
+                    </h2>
+                    <h3 id="wiki-title" class="text-3xl md:text-4xl font-bold nord-text-bright mb-6 leading-tight">Khám
+                        phá thuật toán Deeplott chuyên sâu</h3>
+                    <p id="wiki-desc" class="text-gray-400 mb-10 leading-relaxed font-light">
+                        Tìm hiểu các nguyên lý khoa học đằng sau việc phân tích dữ liệu xổ số. Từ phân phối Poisson đến
+                        các mô hình AI, Wiki Deeplott cung cấp hướng dẫn chi tiết giúp bạn làm chủ mọi con số.
+                    </p>
+                    <a href="wiki/index.html"
+                        class="cta-button px-8 py-4 rounded-xl font-bold uppercase text-xs tracking-widest flex items-center w-fit">
+                        <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> <span id="wiki-btn">Truy cập Wiki
+                            ngay</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Download Section -->
     <section id="download" class="py-40 px-6 text-center">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-bold nord-text-bright mb-8">Làm chủ những con số ngay hôm nay.</h2>
             <p class="text-gray-400 mb-12">Nâng tầm chiến thuật chơi Vietlott của bạn với trợ lý dữ liệu hàng đầu.</p>
-            
+
             <div class="flex flex-col md:flex-row justify-center items-start gap-8">
                 <!-- App Store Column -->
                 <div class="flex flex-col items-center w-full md:w-auto">
                     <div class="w-full relative">
-                        <a href="#" class="cta-button-disabled px-10 py-5 rounded-2xl font-bold flex items-center w-full justify-center">
+                        <a href="#"
+                            class="cta-button-disabled px-10 py-5 rounded-2xl font-bold flex items-center w-full justify-center">
                             <i data-lucide="apple" class="w-5 h-5 mr-3"></i> App Store
                         </a>
                     </div>
-                    <span class="mt-3 text-[10px] uppercase tracking-widest text-[#bf616a] font-bold animate-pulse">* Coming Soon</span>
+                    <span class="mt-3 text-[10px] uppercase tracking-widest text-[#bf616a] font-bold animate-pulse">*
+                        Coming Soon</span>
                 </div>
 
                 <!-- Google Play Column -->
                 <div class="flex flex-col items-center w-full md:w-auto">
-                    <a href="https://play.google.com/store/apps/details?id=com.zenithstudio.deeplott" class="cta-button px-10 py-5 rounded-2xl font-bold flex items-center w-full justify-center">
+                    <a href="https://play.google.com/store/apps/details?id=com.zenithstudio.deeplott"
+                        class="cta-button px-10 py-5 rounded-2xl font-bold flex items-center w-full justify-center">
                         <i data-lucide="play" class="w-5 h-5 mr-3"></i> Google Play
                     </a>
                 </div>
             </div>
 
             <p class="mt-20 text-[10px] text-gray-600 italic max-w-lg mx-auto leading-relaxed">
-                Lưu ý: Ứng dụng chỉ cung cấp dữ liệu thống kê và phân tích, không bao gồm chức năng cá cược hoặc cam kết tỷ lệ trúng thưởng 100%.
+                Lưu ý: Ứng dụng chỉ cung cấp dữ liệu thống kê và phân tích, không bao gồm chức năng cá cược hoặc cam kết
+                tỷ lệ trúng thưởng 100%.
             </p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-12 px-6 border-t border-[#3b4252]/30">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-gray-600 gap-6">
-            <p>© 2024 DEEPLOTT ANALYTICS</p>
+        <div
+            class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-gray-600 gap-6">
+            <p>© 2026 DEEPLOTT ANALYTICS</p>
             <div class="flex space-x-8">
                 <a href="policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="policy.html" class="hover:text-white transition-colors">Terms of Service</a>
@@ -297,7 +391,42 @@
     </footer>
 
     <script>
+        // Định nghĩa các hằng số để quản lý tập trung (Tránh hardcode trong logic xử lý)
+        const Constant = {
+            AppName: "DEEPLOTT",
+            WikiMenu: "Wiki",
+            WikiTag: "Knowledge & Theory",
+            WikiTitle: "Khám phá thuật toán Deeplott chuyên sâu",
+            WikiDesc: "Tìm hiểu các nguyên lý khoa học đằng sau việc phân tích dữ liệu xổ số. Từ phân phối Poisson đến các mô hình AI, Wiki Deeplott cung cấp hướng dẫn chi tiết giúp bạn làm chủ mọi con số.",
+            WikiDesc: "Tìm hiểu các nguyên lý khoa học đằng sau việc phân tích dữ liệu xổ số. Từ phân phối Poisson đến các mô hình AI, Wiki Deeplott cung cấp hướng dẫn chi tiết giúp bạn làm chủ mọi con số.",
+            WikiBtn: "Truy cập Wiki ngay",
+            WikiIlluTitle: "Wiki_Analysis_v1.0",
+            WikiIllu1: ">> loading_statistical_engine...",
+            WikiIllu2: ">> processing_probability_matrix",
+            WikiIllu3: ">> deploying_ai_model_knn",
+            LabelPoisson: "Poisson",
+            LabelKNN: "KNN Model"
+        };
+
+        // Khởi tạo các icon Lucide cho toàn bộ trang
         lucide.createIcons();
+
+        // Cập nhật text từ hằng số (đảm bảo tính nhất quán nếu có thay đổi sau này)
+        const syncContent = () => {
+            const navWiki = document.getElementById('nav-wiki');
+            if (navWiki) navWiki.innerText = Constant.WikiMenu;
+
+            // Cập nhật phần minh họa trực quan
+            document.getElementById('wiki-illu-title').innerText = Constant.WikiIlluTitle;
+            document.getElementById('wiki-illu-1').innerText = Constant.WikiIllu1;
+            document.getElementById('wiki-illu-2').innerText = Constant.WikiIllu2;
+            document.getElementById('wiki-illu-3').innerText = Constant.WikiIllu3;
+            document.getElementById('label-poisson').innerText = Constant.LabelPoisson;
+            document.getElementById('label-knn').innerText = Constant.LabelKNN;
+        };
+        syncContent();
+
+        // Xử lý sự kiện scroll cho thanh navigation
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
@@ -310,4 +439,5 @@
         });
     </script>
 </body>
+
 </html>

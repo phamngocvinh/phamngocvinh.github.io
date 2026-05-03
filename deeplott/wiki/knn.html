@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Nearest Neighbors (KNN) - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Thuật toán K-Nearest Neighbors (KNN)</h1>
+                <p class="subtitle">Tìm kiếm các kỳ quay tương đồng trong quá khứ</p>
+            </div>
+            <div class="content-body">
+                <h2>1. K-Nearest Neighbors là gì?</h2>
+                <p><i class="fas fa-brain"></i> <strong>K-Nearest Neighbors (KNN)</strong> hay "K-Láng giềng gần nhất" là một thuật toán cốt lõi trong Trí tuệ nhân tạo (Machine Learning). Ý tưởng của KNN rất đơn giản: <em>"Gần mực thì đen, gần đèn thì rạng"</em>. Nếu một dữ liệu mới có các đặc điểm rất giống với một nhóm dữ liệu cũ, thì khả năng cao nó sẽ có kết quả tương tự nhóm đó.</p>
+
+                <p>Trong Deeplott, thay vì coi kết quả xổ số là các "con số" đơn thuần, chúng ta coi 1 kỳ quay là <strong>1 điểm trong không gian N-chiều</strong> (với N là số lượng bóng rút ra, ví dụ N=6). Thuật toán KNN sẽ tìm kiếm trong toàn bộ lịch sử để lấy ra $K$ kỳ quay có "khoảng cách" gần nhất với kỳ quay hiện tại.</p>
+
+                <h2>2. Khoảng cách giữa 2 kỳ quay tính như thế nào?</h2>
+                <p>Để đo độ "giống nhau" giữa 2 kỳ quay, máy tính sử dụng <strong>Khoảng cách Euclid (Euclidean Distance)</strong> - phiên bản mở rộng của định lý Pytago trong không gian đa chiều.</p>
+                
+                <div class="math-block">
+                    $D(A, B) = \sqrt{(a_1 - b_1)^2 + (a_2 - b_2)^2 + ... + (a_n - b_n)^2}$
+                </div>
+                
+                <p>Trong đó:<br>
+                - $A$ là dãy số của kỳ quay hiện tại $(a_1, a_2, ..., a_6)$.<br>
+                - $B$ là dãy số của một kỳ quay trong lịch sử $(b_1, b_2, ..., b_6)$.<br>
+                - Khoảng cách $D$ càng NHỎ, nghĩa là 2 kỳ quay càng GIỐNG NHAU.</p>
+
+                <div class="example-box">
+                    <h4><i class="fas fa-search"></i> Ví dụ tính khoảng cách</h4>
+                    <p>Giả sử ta xét hệ thống chỉ có 3 con số cho dễ hiểu:<br>
+                    - Kỳ hôm nay A: <strong>05, 10, 15</strong><br>
+                    - Kỳ quá khứ B: <strong>06, 09, 14</strong></p>
+                    <p>Tính khoảng cách:<br>
+                    $D = \sqrt{(5 - 6)^2 + (10 - 9)^2 + (15 - 14)^2}$<br>
+                    $D = \sqrt{(-1)^2 + (1)^2 + (1)^2} = \sqrt{1 + 1 + 1} = \sqrt{3} \approx 1.73$</p>
+                    <p>Máy tính sẽ lặp lại phép tính này với <strong>HÀNG NGÀN</strong> kỳ quay trong lịch sử chỉ trong chớp mắt, sắp xếp lại và trả về cho bạn top 10 (nếu K=10) kỳ quay có điểm $D$ nhỏ nhất.</p>
+                </div>
+
+                <h2>3. Ứng dụng thực tế</h2>
+                <div class="note-box">
+                    <h4><i class="fas fa-magic"></i> Dự đoán kỳ tiếp theo?</h4>
+                    <p>Sau khi tìm được K "láng giềng", ứng dụng sẽ xem xét: <strong>Ở các láng giềng này, con số nào đã xuất hiện NGAY SAU ĐÓ (trong kỳ tiếp theo của chúng)?</strong></p>
+                    <p>Bằng cách thống kê lại tần suất các con số xuất hiện ngay sau nhóm láng giềng này, hệ thống sẽ đề xuất cho bạn những con số tiềm năng cho kỳ quay ngày mai dựa trên mô hình "Lặp lại quá khứ". Mặc dù không đảm bảo 100%, nhưng đây là một phương pháp tìm kiếm pattern cực kỳ mạnh mẽ của AI.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tỷ lệ Cơ bản - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Tỷ lệ Chẵn/Lẻ & Lớn/Nhỏ</h1>
+                <p class="subtitle">Các bộ lọc căn bản và quyền lực nhất trong xổ số</p>
+            </div>
+            <div class="content-body">
+                <p>Đây là hai chỉ số quan trọng giúp người chơi đánh giá nhanh "độ cân bằng" của một bộ số. Hầu hết các kỳ quay thực tế đều tuân theo các quy luật cân bằng này.</p>
+
+                <h2>1. Phân Bố Chẵn / Lẻ (Even / Odd)</h2>
+                <p><i class="fas fa-balance-scale"></i> Khi chọn 6 số từ tập hợp gồm cả số chẵn và số lẻ, xác suất để vé của bạn rơi vào các tỷ lệ Chẵn:Lẻ khác nhau tuân theo <strong>Phân phối siêu bội (Hypergeometric Distribution)</strong>.</p>
+
+                <div class="math-block">
+                    $P(X = k) = \frac{C(K, k) \times C(N - K, n - k)}{C(N, n)}$
+                </div>
+                
+                <p>Giải thích đối với xổ số 6/45:<br>
+                - $N = 45$ (Tổng số quả bóng).<br>
+                - $K = 22$ (Số quả bóng Chẵn).<br>
+                - $n = 6$ (Số quả rút ra trong 1 vé).<br>
+                - $k$ là số lượng bóng Chẵn bạn muốn có trong vé (từ 0 đến 6).</p>
+
+                <div class="example-box">
+                    <h4><i class="fas fa-dice"></i> Xác suất thực tế (6/45)</h4>
+                    <ul>
+                        <li>Tỷ lệ <strong>3 Chẵn : 3 Lẻ</strong> chiếm khoảng <strong>33%</strong>.</li>
+                        <li>Tỷ lệ <strong>2 Chẵn : 4 Lẻ</strong> và <strong>4 Chẵn : 2 Lẻ</strong> chiếm khoảng <strong>48%</strong>.</li>
+                        <li>Tỷ lệ <strong>6 Chẵn : 0 Lẻ</strong> (toàn chẵn) chỉ chiếm <strong>0.9%</strong>!</li>
+                    </ul>
+                    <p>Chiến thuật: Luôn ưu tiên các tỷ lệ <strong>3:3, 2:4 hoặc 4:2</strong>. Tránh các bộ số lệch hoàn toàn về một bên.</p>
+                </div>
+
+                <h2>2. Phân Bố Lớn / Nhỏ (Big / Small)</h2>
+                <p><i class="fas fa-sort-amount-up"></i> Bảng số được chia làm 2 nửa. Ví dụ ở trò 6/45, nửa <strong>Nhỏ (Small)</strong> là từ 01 đến 22, nửa <strong>Lớn (Big)</strong> là từ 23 đến 45.</p>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-mountain"></i> Quy luật cân bằng Cao/Thấp</h4>
+                    <p>Tương tự như Chẵn/Lẻ, các bộ số lý tưởng thường có sự pha trộn giữa hai nửa bảng số. Một kỳ quay có cả 6 số đều nằm ở nửa dưới (từ 01-10 chẳng hạn) là cực kỳ hiếm gặp.</p>
+                </div>
+
+                <h2>3. Vùng trống (Blank Zones)</h2>
+                <p><i class="fas fa-layer-group"></i> Khi chia bảng số thành các khoảng nhỏ (ví dụ 1-9, 10-19, 20-29...), hiếm khi tất cả các khoảng đều có số xuất hiện. Luôn có những "vùng trống" không có con số nào.</p>
+                <div class="note-box">
+                    <p>Phân tích này giúp bạn mạnh dạn "loại bỏ" một số nhóm số nhất định để tập trung vào các nhóm có khả năng về cao hơn.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

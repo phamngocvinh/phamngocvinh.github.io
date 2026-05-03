@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân tích theo Thứ - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Phân tích theo Thứ trong tuần</h1>
+                <p class="subtitle">Tìm kiếm quy luật theo thời gian định kỳ</p>
+            </div>
+            <div class="content-body">
+                <p><i class="fas fa-calendar-day"></i> Một số con số dường như "thích" xuất hiện vào những thứ nhất định trong tuần hơn những ngày khác.</p>
+
+                <h2>Nguyên lý hoạt động</h2>
+                <p>Hệ thống chia toàn bộ lịch sử kỳ quay thành 7 nhóm tương ứng với Thứ 2 đến Chủ Nhật. Sau đó, tính toán tần suất xuất hiện của từng số trong mỗi nhóm này.</p>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-search-dollar"></i> Ví dụ</h4>
+                    <p>Số <strong>24</strong> có thể xuất hiện 50 lần vào Thứ 4, nhưng chỉ xuất hiện 10 lần vào Chủ Nhật. Nếu hôm nay là Thứ 4, con số 24 sẽ là một ứng cử viên sáng giá dựa trên dữ liệu lịch sử của ngày đó.</p>
+                </div>
+
+                <div class="note-box">
+                    <p>Phân tích này giúp bạn tận dụng các biến số ngoại lai hoặc các quy luật vận hành của lồng cầu (nếu có) theo chu kỳ thời gian thực.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

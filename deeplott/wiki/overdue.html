@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân tích Gan (Overdue) - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Phân tích Gan (Overdue)</h1>
+                <p class="subtitle">Đo lường thời gian "lặn" của các con số</p>
+            </div>
+            <div class="content-body">
+                <p>Trong xổ số, "Gan" là thuật ngữ chỉ một con số không xuất hiện trong một khoảng thời gian dài. Phân tích Gan giúp bạn nhận diện những con số sắp đến thời điểm "nổ" hoặc những số đang rơi vào chu kỳ ngủ đông.</p>
+
+                <h2>1. Gan hiện tại (Current Skip)</h2>
+                <p><i class="fas fa-hourglass-start"></i> Là số kỳ liên tiếp tính từ kỳ quay gần nhất mà con số đó chưa xuất hiện lại.</p>
+                <div class="math-block">
+                    $S_{current} = \text{Số kỳ tính từ lần xuất hiện cuối cùng}$
+                </div>
+
+                <h2>2. Gan cực đại (Max Skip)</h2>
+                <p><i class="fas fa-history"></i> Là khoảng thời gian (số kỳ) dài nhất mà con số đó từng "lặn" trong suốt lịch sử dữ liệu được phân tích.</p>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Cảnh báo Gan</h4>
+                    <p>Khi <strong>Gan hiện tại</strong> tiến sát hoặc vượt qua <strong>Gan cực đại</strong>, con số đó được coi là "Cực đại gan". Đây là thời điểm xác suất con số này xuất hiện lại là rất cao.</p>
+                </div>
+
+                <h2>3. Nhịp (Number Rhythm)</h2>
+                <p><i class="fas fa-heartbeat"></i> Nhịp là khoảng cách trung bình giữa các lần xuất hiện của một con số.</p>
+                <div class="math-block">
+                    $R = \frac{\sum (\text{Khoảng cách giữa các lần xuất hiện})}{\text{Số lần xuất hiện} - 1}$
+                </div>
+
+                <h2>4. Chỉ số Gan (Overdue Index)</h2>
+                <p><i class="fas fa-tachometer-alt"></i> Đây là chỉ số độc quyền của Deeplott, so sánh mức độ "đói" của con số so với nhịp sinh học bình thường của nó.</p>
+                <div class="math-block">
+                    $I_{overdue} = \frac{\text{Gan hiện tại}}{\text{Nhịp}}$
+                </div>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-lightbulb"></i> Cách đọc chỉ số</h4>
+                    <ul>
+                        <li><strong>$I < 1.0$:</strong> Con số vẫn đang trong chu kỳ bình thường.</li>
+                        <li><strong>$I > 1.0$:</strong> Con số đang "gan" lâu hơn trung bình.</li>
+                        <li><strong>$I > 2.0$:</strong> Con số đang ở trạng thái cực kỳ khan hiếm, xác suất về đang tăng rất mạnh.</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

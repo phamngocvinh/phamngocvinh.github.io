@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng quan - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Phân Tích Tổng Quan</h1>
+                <p class="subtitle">Các chỉ số thống kê cơ bản nhất về tập hợp các con số</p>
+            </div>
+            <div class="content-body">
+                <p>Trong thẻ <strong>Tổng Quan</strong> của ứng dụng, chúng ta xem xét các số liệu thống kê chung nhất của một dãy số (thường là kết quả của một kỳ quay). Các chỉ số này giúp chúng ta đánh giá nhanh xem dãy số đó có "bình thường" hay không.</p>
+
+                <h2>1. Tổng giá trị (Sum)</h2>
+                <p>Tổng giá trị đơn giản là phép cộng tất cả các con số trong một kỳ quay lại với nhau.</p>
+                <div class="math-block">
+                    $S = x_1 + x_2 + x_3 + ... + x_n$
+                </div>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-lightbulb"></i> Ví dụ dễ hiểu</h4>
+                    <p>Giả sử kỳ quay 6/45 có kết quả: <strong>05, 12, 18, 24, 30, 41</strong>.<br>
+                    Tổng = 05 + 12 + 18 + 24 + 30 + 41 = <strong>130</strong>.<br>
+                    Theo thống kê lịch sử của 6/45, tổng các số thường rơi vào khoảng từ 110 đến 170. Nếu bạn chọn một dãy số có tổng là 30 (ví dụ: 01,02,03,04,05,15), xác suất để dãy này trúng là cực kỳ thấp.</p>
+                </div>
+
+                <h2>2. Giá trị Trung bình (Mean / Expected Value)</h2>
+                <p>Kỳ vọng toán học (hay Trung bình cộng) là giá trị trung bình của toàn bộ các số. Đối với xổ số (ví dụ 6/45), trung bình cộng của bộ số lý tưởng thường nằm ở giữa thang số (khoảng 22.5).</p>
+                <div class="math-block">
+                    $\mu = \frac{1}{n} \sum_{i=1}^{n} x_i$
+                </div>
+
+                <h2>3. Độ Lệch Chuẩn (Standard Deviation)</h2>
+                <p>Đây là chỉ số quan trọng! Nó cho biết các con số trong kỳ quay "túm tụm" lại một chỗ hay "phân tán" đều ra toàn bộ dải số.</p>
+                <div class="math-block">
+                    $\sigma = \sqrt{ \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \mu)^2 }$
+                </div>
+                <p><strong>Giải thích công thức:</strong> Ta lấy từng số $x_i$ trừ đi số trung bình $\mu$, bình phương lên để triệt tiêu dấu âm, cộng tất cả lại rồi chia trung bình và lấy căn bậc hai.</p>
+
+                <div class="example-box">
+                    <h4><i class="fas fa-lightbulb"></i> Ví dụ dễ hiểu</h4>
+                    <p>So sánh 2 kỳ quay:<br>
+                    - Kỳ 1: <strong>20, 21, 22, 23, 24, 25</strong> (Túm tụm ở giữa) -> Độ lệch chuẩn rất <strong>THẤP</strong>.<br>
+                    - Kỳ 2: <strong>02, 09, 15, 28, 35, 44</strong> (Phân tán đều) -> Độ lệch chuẩn rất <strong>CAO</strong> (hoặc đạt mức chuẩn).<br>
+                    Trong thực tế, các kỳ quay thường có độ phân tán tốt. Nếu bạn chọn số có độ lệch chuẩn quá thấp, xác suất trúng là rất hiếm.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mối quan hệ & Bộ số - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Mối Quan Hệ Giữa Các Con Số</h1>
+                <p class="subtitle">Khám phá các cặp số "đôi bạn thân" và "kẻ thù" của nhau</p>
+            </div>
+            <div class="content-body">
+                <p>Các con số không xuất hiện một cách hoàn toàn độc lập. Luôn có những mối quan hệ ẩn giấu giữa chúng mà thống kê có thể chỉ ra.</p>
+
+                <h2>1. Cặp số hay ra cùng nhau (Co-occurrences)</h2>
+                <p><i class="fas fa-user-friends"></i> Phân tích này tìm ra những con số thường xuyên "dắt tay nhau" cùng xuất hiện trong một kỳ quay.</p>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-lightbulb"></i> Ví dụ thực tế</h4>
+                    <p>Nếu bạn thấy rằng mỗi khi số <strong>08</strong> xuất hiện, có tới 40% khả năng số <strong>21</strong> cũng xuất hiện cùng kỳ đó, thì đây chính là một "Cặp số thân thiết". Bạn nên cân nhắc chọn cả hai nếu đã chọn một trong số chúng.</p>
+                </div>
+
+                <h2>2. Bộ số thường xuyên (Frequent Sets)</h2>
+                <p><i class="fas fa-users"></i> Mở rộng của cặp số, đây là các bộ 3, bộ 4 số thường xuyên cùng về một lúc.</p>
+                <div class="note-box">
+                    <p>Deeplott sử dụng thuật toán khai thác tập phổ biến để lọc ra các bộ số có tần suất xuất hiện vượt trội so với xác suất ngẫu nhiên.</p>
+                </div>
+
+                <h2>3. Cặp số kỵ nhau (Incompatible Pairs)</h2>
+                <p><i class="fas fa-user-slash"></i> Ngược lại với cặp số thân thiết, đây là những con số rất hiếm khi (hoặc chưa bao giờ) xuất hiện cùng nhau trong cùng một kỳ quay, mặc dù mỗi số đều ra rất nhiều.</p>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-hand-middle-finger"></i> Chiến thuật loại trừ</h4>
+                    <p>Nếu số <strong>05</strong> và <strong>37</strong> là cặp số kỵ nhau, và bạn rất thích cả hai số này, lời khuyên toán học là: <strong>Chỉ nên chọn một trong hai</strong> cho mỗi vé để tối ưu hóa xác suất trúng.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

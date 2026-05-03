@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổ Hợp Smart Wheel - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Tổ Hợp Smart Wheel</h1>
+                <p class="subtitle">Bao lô thông minh - Tối ưu hóa xác suất trúng giải bằng hệ thống bánh xe</p>
+            </div>
+            <div class="content-body">
+                <h2>1. Khái niệm Bao Lô (Wheeling System)</h2>
+                <p><i class="fas fa-dharmachakra"></i> Nếu bạn có 10 con số yêu thích, nhưng mỗi vé xổ số chỉ cho chọn 6 số. Làm sao để mua các vé sao cho 10 số này được kết hợp tốt nhất? Đó là lúc ta dùng hệ thống Bao Lô (Wheeling).</p>
+                <p>Bao lô <strong>Toàn bộ (Full Wheel)</strong> nghĩa là bạn tạo ra TẤT CẢ các tổ hợp có thể có. Với 10 số, số lượng vé 6 số tạo ra là tổ hợp chập 6 của 10: $C(10, 6) = 210$ vé. Điều này tốn rất nhiều tiền!</p>
+
+                <h2>2. Smart Wheel (Bao lô rút gọn) là gì?</h2>
+                <p><strong>Smart Wheel (Abbreviated Wheel)</strong> là một thuật toán bao lô thu gọn, dựa trên cơ sở toán học về Thiết kế khối (Block Design). Mục tiêu của Smart Wheel là <strong>giảm thiểu số vé phải mua</strong> nhưng vẫn <strong>ĐẢM BẢO một giải thưởng tối thiểu</strong> (Minimum Win Guarantee).</p>
+
+                <div class="example-box">
+                    <h4><i class="fas fa-shield-alt"></i> Bảo hành trúng giải (Guarantee)</h4>
+                    <p>Thuật ngữ thường dùng là: <strong>Bảo đảm trúng 4 nếu 5 số trúng (4 if 5)</strong>. Nghĩa là:<br>
+                    Nếu trong 10 số bạn chọn, có 5 số trùng với kết quả xổ số, thì thuật toán Smart Wheel <strong>cam kết toán học 100%</strong> rằng trong tập hợp các vé (đã rút gọn) của bạn, chắc chắn có ít nhất 1 vé trúng giải 4 số.</p>
+                </div>
+
+                <h2>3. Thuật toán tạo vé Smart Wheel</h2>
+                <p>Bài toán tạo ra một hệ thống Smart Wheel tối ưu (tìm số vé tối thiểu) là một bài toán NP-Hard trong khoa học máy tính (bài toán lớp phủ - Covering Design). Trong ứng dụng Deeplott, thuật toán hoạt động theo các bước heuristic sau:</p>
+
+                <ol>
+                    <li><strong>Sinh tổ hợp:</strong> Thuật toán sử dụng một hệ thống Template (khuôn mẫu) tĩnh đã được chứng minh toán học (ví dụ bảng của nền tảng xổ số quốc tế) để ánh xạ các chỉ số (index) từ 1 đến N.</li>
+                    <li><strong>Thay thế Index:</strong> Khi bạn chọn các con số cụ thể, thuật toán sẽ map các con số của bạn vào các vị trí index trong Template.</li>
+                    <li><strong>Lọc (Filtering):</strong> Đây là điểm mạnh nhất của Deeplott. Từ các vé được sinh ra bởi Wheel, hệ thống sẽ chạy các vé này qua <strong>Bộ Lọc Thống Kê (Statistical Filters)</strong> như Tổng, Chẵn/Lẻ, Khoảng cách (được mô tả ở các phần trước).</li>
+                    <li><strong>Loại bỏ vé xấu:</strong> Những vé nào sinh ra từ Wheel mà bị đánh giá là "phi lý trí" (ví dụ vé có 6 số chẵn) sẽ bị bộ lọc thẳng tay loại bỏ để tiết kiệm tiền cho bạn!</li>
+                </ol>
+
+                <div class="note-box">
+                    <h4><i class="fas fa-coins"></i> Hiệu quả kinh tế</h4>
+                    <p>Thay vì mua 210 vé cho 10 con số (Full Wheel). Nếu dùng Smart Wheel chuẩn "Trúng 4 nếu trúng 5", bạn chỉ phải mua khoảng <strong>20 vé</strong>. Tiết kiệm 90% chi phí nhưng vẫn duy trì lưới an toàn toán học vững chắc.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

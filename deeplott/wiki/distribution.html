@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm định Chi-Square - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Kiểm định Chi-Square</h1>
+                <p class="subtitle">Phân tích mức độ ngẫu nhiên của lồng cầu</p>
+            </div>
+            <div class="content-body">
+                <p>Trong thống kê xổ số, việc các con số xuất hiện nhiều hay ít không quan trọng bằng việc chúng có xuất hiện **ngẫu nhiên** hay không. Kiểm định Chi-Square giúp chúng ta phát hiện những sự bất thường trong bộ máy quay số.</p>
+
+                <h2>1. Kiểm định Chi-Square (Chi-Square Test)</h2>
+                <p><i class="fas fa-microscope"></i> Đây là phương pháp thống kê cao cấp để kiểm tra xem các con số có thực sự xuất hiện một cách ngẫu nhiên hay không. Chúng tôi so sánh **Tần suất thực tế** (Observed) với **Tần suất lý thuyết** (Expected).</p>
+                
+                <p>Công thức tính thống kê Chi-bình phương ($\chi^2$):</p>
+                <div class="math-block">
+                    $\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}$
+                </div>
+                <p>Trong đó:<br>
+                - $O_i$: Tần suất xuất hiện thực tế của số $i$.<br>
+                - $E_i$: Tần suất xuất hiện mong đợi (giả sử mọi số có xác suất bằng nhau).</p>
+
+                <div class="example-box">
+                    <h4><i class="fas fa-chart-line"></i> Ý nghĩa của chỉ số</h4>
+                    <ul>
+                        <li><strong>Giá trị $\chi^2$ thấp:</strong> Các con số đang về rất đều và ngẫu nhiên (Lồng cầu hoạt động hoàn hảo).</li>
+                        <li><strong>Giá trị $\chi^2$ cao:</strong> Có sự chênh lệch lớn, một số con số đang "vượt mặt" các số khác quá nhiều.</li>
+                        <li><strong>P-Value < 0.05:</strong> Đây là mức cảnh báo đỏ. Dữ liệu cho thấy có một xu hướng "không ngẫu nhiên" rõ rệt, có thể là do tính chất vật lý của lồng cầu tại thời điểm đó.</li>
+                    </ul>
+                    <p>Trong Deeplott, biểu đồ phân phối sẽ đánh dấu màu cam cho các con số "ngoại lai" - những số đang có đóng góp lớn nhất vào sự mất cân bằng của hệ thống.</p>
+                </div>
+
+                <h2>2. Tần suất kỳ vọng (Expected Frequency)</h2>
+                <p>Là số lần trung bình một con số *nên* xuất hiện nếu mọi quả bóng đều như nhau. Ví dụ nếu quay 100 kỳ 6/45, mỗi số nên xuất hiện khoảng $100 \times 6 / 45 \approx 13.3$ lần.</p>
+                
+                <div class="note-box">
+                    <p>Nếu một con số xuất hiện 30 lần thay vì 13 lần, giá trị đóng góp vào Chi-Square của nó sẽ rất lớn, kéo chỉ số $\chi^2$ lên cao và làm P-Value giảm xuống.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

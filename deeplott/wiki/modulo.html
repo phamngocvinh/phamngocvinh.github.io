@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoảng Cách & Modulo - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Phân Tích Khoảng Cách & Modulo</h1>
+                <p class="subtitle">Khám phá các bước nhảy và số dư trong toán học</p>
+            </div>
+            <div class="content-body">
+                <p>Trong toán học, Modulo là phép chia lấy dư. Trong Deeplott, chúng tôi sử dụng phép toán này để chia các con số vào các nhóm khác nhau, giúp phát hiện các quy luật phân bố ẩn. Có 4 loại phân tích Modulo chính trong ứng dụng:</p>
+
+                <h2>1. Tỉ lệ cấu trúc (Pattern Ratio)</h2>
+                <p><i class="fas fa-th"></i> Phân tích cấu trúc xem xét sự kết hợp của các số dư trong một kỳ quay. Ví dụ với Modulo 3, mỗi số có thể dư 0, 1 hoặc 2. Một cấu trúc "2-2-2" nghĩa là có 2 số dư 0, 2 số dư 1 và 2 số dư 2.</p>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-lightbulb"></i> Ví dụ cấu trúc Modulo 3</h4>
+                    <p>Kỳ quay: <strong>03, 10, 15, 22, 27, 34</strong></p>
+                    <ul>
+                        <li>Chia 3 dư 0: 03, 15, 27 (3 số)</li>
+                        <li>Chia 3 dư 1: 10, 22, 34 (3 số)</li>
+                        <li>Chia 3 dư 2: Không có (0 số)</li>
+                    </ul>
+                    <p>Cấu trúc này được ký hiệu là <strong>3-3-0</strong>. Thống kê cho thấy các cấu trúc cân bằng (như 2-2-2) thường xuất hiện nhiều hơn các cấu trúc cực đoan (như 6-0-0).</p>
+                </div>
+
+                <h2>2. Số dư theo vị trí (Positional Modulo)</h2>
+                <p><i class="fas fa-list-ol"></i> Mỗi vị trí bóng (từ bóng nhỏ nhất đến bóng lớn nhất) thường có xu hướng rơi vào các nhóm số dư nhất định. Phân tích này giúp bạn chọn số dư phù hợp cho từng vị trí bóng.</p>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-map-marker-alt"></i> Ví dụ xu hướng vị trí</h4>
+                    <p>Thường thì bóng số 1 (bóng nhỏ nhất) có xác suất rơi vào nhóm <strong>Dư 1 hoặc Dư 2</strong> cao hơn vì chúng là các số nhỏ (01, 02). Ngược lại, bóng số 6 thường có xu hướng rơi vào các nhóm số dư của các số lớn gần cuối bảng (ví dụ 43, 44, 45).</p>
+                </div>
+
+                <h2>3. Vùng trống (Blank Zones - Modulo 5)</h2>
+                <p><i class="fas fa-ghost"></i> Khi chia bảng số thành 5 nhóm (Modulo 5), hiếm khi cả 5 nhóm đều có số xuất hiện. Luôn có những nhóm "trống" không có con số nào.</p>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-eye-slash"></i> Quy luật vùng trống</h4>
+                    <p>Trong xổ số 6/45, khi dùng Modulo 5, xác suất để có <strong>1 hoặc 2 nhóm trống</strong> là cực kỳ cao (trên 80%).</p>
+                    <p>Nếu bạn chọn 6 số mà rải đều cả 5 nhóm số dư (không có vùng trống), bạn đang đi ngược lại với xác suất thống kê thực tế.</p>
+                </div>
+
+                <h2>4. Đuôi số (Unit Digits - Modulo 10)</h2>
+                <p><i class="fas fa-fingerprint"></i> Modulo 10 chính là chữ số hàng đơn vị (đuôi số). Phân tích này đếm xem trong 6 số của kết quả có bao nhiêu loại đuôi số khác nhau.</p>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-sort-numeric-down"></i> Ví dụ về sự đa dạng đuôi số</h4>
+                    <p>Kết quả: <strong>02, 12, 25, 32, 44, 45</strong></p>
+                    <ul>
+                        <li>Các đuôi số là: 2, 2, 5, 2, 4, 5</li>
+                        <li>Các đuôi số duy nhất: <strong>2, 4, 5</strong> (3 loại đuôi)</li>
+                    </ul>
+                    <p>Một kỳ quay thông thường sẽ có từ 4 đến 6 loại đuôi số khác nhau. Nếu kết quả chỉ có 2-3 loại đuôi (như ví dụ trên với quá nhiều số đuôi 2), đó là một kỳ quay "bết" đuôi, thường ít xảy ra hơn.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

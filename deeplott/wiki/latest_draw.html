@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kỳ Quay Gần Nhất - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Phân Tích Kỳ Quay Gần Nhất</h1>
+                <p class="subtitle">Khám phá các con số vừa mới xuất hiện</p>
+            </div>
+            <div class="content-body">
+                <h2>1. Vì sao lại cần phân tích kỳ quay vừa qua?</h2>
+                <p><i class="fas fa-history"></i> Trong thống kê xổ số, kết quả của kỳ quay gần nhất thường mang những thông tin quan trọng. Có một khái niệm gọi là <strong>Số Rơi (Repeat Numbers)</strong> - tức là những con số xuất hiện ở kỳ trước và tiếp tục "rơi" lại vào kỳ ngay sau đó.</p>
+                
+                <h2>2. Xác suất Số Rơi (Trùng lặp lại)</h2>
+                <p>Nhiều người tin rằng "số vừa ra thì làm sao ra lại được ngay". Toán học chứng minh điều ngược lại! Xác suất để có ít nhất 1 con số của kỳ trước tiếp tục xuất hiện ở kỳ này là rất cao.</p>
+                <p>Tính toán cho xổ số 6/45:</p>
+                <div class="math-block">
+                    $P(\text{Trùng ít nhất 1}) = 1 - P(\text{Không trùng số nào})$
+                </div>
+                <p>Số lượng kết hợp không trùng bất kỳ số nào trong 6 số của kỳ trước là $C(39, 6) = 3,262,623$.</p>
+                <p>Tổng số tổ hợp vé có thể là $C(45, 6) = 8,145,060$.</p>
+                <p>Xác suất KHÔNG trùng: $3,262,623 / 8,145,060 \approx 40.06\%$.</p>
+                <p>Vậy xác suất TRÚNG LẠI ít nhất 1 con số là: $1 - 40.06\% = 59.94\%$!</p>
+                
+                <div class="example-box">
+                    <h4><i class="fas fa-exclamation-circle"></i> Bài học rút ra</h4>
+                    <p>Có gần <strong>60%</strong> khả năng kỳ quay tiếp theo sẽ lặp lại ít nhất 1 con số của kỳ vừa rồi. Do đó, việc cố tình "loại bỏ hoàn toàn" 6 con số vừa ra hôm qua khỏi vé của bạn có thể lại là một chiến thuật làm giảm cơ hội trúng thưởng.</p>
+                </div>
+                
+                <h2>3. Các chỉ số phân tích bổ sung</h2>
+                <p>Thẻ "Kỳ quay gần nhất" cũng tự động phân tích chi tiết bộ số vừa ra thành các chỉ số đã được học như: Tổng, Chẵn Lẻ, Khoảng cách... để bạn biết kỳ hôm qua có diễn ra "bình thường" hay không. Nếu kỳ trước quá bất thường (ví dụ 6 số chẵn), kỳ sau khả năng cực kỳ cao sẽ có sự cân bằng trở lại (Mean Reversion - Sự trở về số trung bình).</p>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân Tích Số Đặc Biệt - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Phân Tích Số Đặc Biệt</h1>
+                <p class="subtitle">Đặc thù của quả bóng thứ n (Ví dụ: Lotto 5/35)</p>
+            </div>
+            <div class="content-body">
+                <h2>1. Quả Bóng Đặc Biệt Khác Gì Bóng Thường?</h2>
+                <p><i class="fas fa-star"></i> Trong một số loại hình xổ số (như Lotto 5/35, Mega Millions, Powerball), có một quả bóng được bốc ra từ một lồng cầu khác biệt hoàn toàn hoặc được quy định là "Số Đặc Biệt" (Special Number).</p>
+
+                <p>Đặc tính của số đặc biệt:</p>
+                <ul>
+                    <li>Không ảnh hưởng đến việc sắp xếp thứ tự của các quả bóng "thường".</li>
+                    <li>Sở hữu <strong>tập dữ liệu xác suất hoàn toàn độc lập</strong>.</li>
+                    <li>Thường quyết định hạng giải cao nhất (Giải Đặc Biệt).</li>
+                </ul>
+
+                <h2>2. Thống Kê Độc Lập</h2>
+                <p>Toán học đằng sau số đặc biệt thực chất không khác biệt, nhưng nó yêu cầu sự <strong>cô lập dữ liệu</strong>. Ta không thể lấy số đặc biệt cộng dồn vào tần suất của các số thường được.</p>
+                
+                <div class="math-block">
+                    $P(\text{Trúng Giải Đặc Biệt}) = P(\text{Trúng các số thường}) \times P(\text{Trúng số đặc biệt})$
+                </div>
+                
+                <p>Vì lồng cầu đặc biệt thường nhỏ hơn (ví dụ chỉ có từ 1 đến 10), xác suất trúng số đặc biệt cao hơn, nhưng nó là điều kiện <strong>bắt buộc (AND)</strong> trong xác suất tổng hợp.</p>
+
+                <div class="example-box">
+                    <h4><i class="fas fa-chart-bar"></i> Chu kỳ Gan (Khoảng cách giữa các lần ra)</h4>
+                    <p>Vì tập dữ liệu của số đặc biệt nhỏ hơn (ví dụ 10 bóng), chu kỳ xuất hiện của chúng ngắn hơn. Ta có thể áp dụng <strong>Khoảng cách trung bình (Mean Time Between Failures - MTBF)</strong> để tính toán thời điểm "Chín Muồi".</p>
+                    <p>Ví dụ: Lồng cầu có 10 bóng. Trung bình mỗi bóng sẽ ra 1 lần sau 10 kỳ. Nếu quả bóng số "05" đã 25 kỳ liên tiếp chưa xuất hiện, nó đang rơi vào trạng thái "Max Gan" và xác suất nó nổ ở các kỳ sau đang tăng dần theo độ trễ thống kê (mặc dù mỗi lần quay độc lập xác suất vẫn là 1/10).</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>

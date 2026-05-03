@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuỗi Liên Tiếp - Deeplott Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar glass-panel" id="sidebar-container"></aside>
+        
+        <main class="main-content glass-panel">
+            <div class="content-header">
+                <h1>Phân Tích Chuỗi Liên Tiếp</h1>
+                <p class="subtitle">Xác suất để xuất hiện các con số liền kề nhau</p>
+            </div>
+            <div class="content-body">
+                <p>Chuỗi liên tiếp (Consecutive sequence) là hiện tượng khi trong một kỳ quay có xuất hiện 2, 3 hoặc nhiều con số liền kề nhau theo thứ tự đếm (ví dụ: 12-13, hoặc 25-26-27).</p>
+
+                <h2>1. Có bao nhiêu bộ số có chứa chuỗi liên tiếp?</h2>
+                <p>Bài toán này thuộc về lĩnh vực Toán Tổ Hợp (Combinatorics). Để tính số lượng các tổ hợp <strong>KHÔNG</strong> chứa bất kỳ chuỗi liên tiếp nào (tức là không có 2 số nào đứng cạnh nhau), chúng ta sử dụng công thức chọn $k$ phần tử từ $N$ phần tử sao cho không có 2 phần tử nào kề nhau:</p>
+                
+                <div class="math-block">
+                    $C(N - k + 1, k) = \frac{(N - k + 1)!}{k!(N - 2k + 1)!}$
+                </div>
+                
+                <p>Trong đó:<br>
+                - $N$ là tổng số quả bóng (ví dụ 45 trong Mega 6/45).<br>
+                - $k$ là số quả bóng được rút ra (ví dụ 6).</p>
+
+                <div class="example-box">
+                    <h4><i class="fas fa-lightbulb"></i> Ví dụ với xổ số Mega 6/45</h4>
+                    <p>Tổng số tất cả các vé có thể có là $C(45, 6) = 8,145,060$ vé.</p>
+                    <p>Số vé <strong>không có</strong> cặp số liên tiếp nào là: $C(45 - 6 + 1, 6) = C(40, 6) = 3,838,380$ vé.</p>
+                    <p>=> Số vé <strong>CÓ CHỨA ÍT NHẤT</strong> một chuỗi liên tiếp (2 số liền nhau trở lên) là:<br>
+                    $8,145,060 - 3,838,380 = 4,306,680$ vé.</p>
+                    <p>Xác suất: $4,306,680 / 8,145,060 \approx 52.88\%$</p>
+                </div>
+
+                <div class="note-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Kết luận đáng ngạc nhiên</h4>
+                    <p>Nhiều người nghĩ rằng việc xuất hiện ví dụ như <strong>14, 15</strong> trong kết quả là rất hiếm. Nhưng toán học chỉ ra rằng: Có đến <strong>gần 53%</strong> số kỳ quay sẽ xuất hiện ít nhất một cặp số liên tiếp! Vì vậy, việc chọn 1 cặp số liên tiếp trong vé của bạn không phải là một ý tưởng tồi.</p>
+                </div>
+
+                <h2>2. Chuỗi dài hơn (3, 4, 5 số liên tiếp)</h2>
+                <p>Mặc dù chuỗi 2 số (cặp) rất phổ biến, xác suất để xuất hiện chuỗi 3 số (ví dụ: 10,11,12) sẽ giảm đi rất mạnh, và chuỗi 4 hay 5 số là cực kỳ hiếm gặp.</p>
+                <ul>
+                    <li>Xác suất chuỗi 3 số liền nhau: Dưới 5%</li>
+                    <li>Xác suất chuỗi 4 số liền nhau: Dưới 0.1%</li>
+                </ul>
+                <p>Do đó, bộ lọc của Deeplott thường khuyên người dùng tránh chọn các chuỗi dài hơn 3 con số.</p>
+            </div>
+        </main>
+    </div>
+    <script src="js/menu.js"></script>
+</body>
+</html>
