@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Wiki - Deeplott</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="main-wrapper">
+        <header>
+            <button class="menu-toggle">
+                <i class="ph ph-list"></i>
+            </button>
+            <div class="premium-badge">Exclusive</div>
+        </header>
+
+        <section class="hero">
+            <h1 data-text="WelcomeTitle"></h1>
+            <h1 style="color: var(--nord8)" data-text="AppName"></h1>
+            <p class="hero-text">Khám phá sức mạnh tối thượng của phân tích dữ liệu xổ số với gói Premium. Mọi giới hạn đều bị xóa bỏ.</p>
+        </section>
+
+        <div class="glass-card">
+            <h2 style="margin-bottom: 1.5rem" data-text="MenuTitle"></h2>
+            
+            <div class="feature-grid">
+                <!-- Phân tích kỳ quay -->
+                <div class="glass-card feature-card" onclick="location.href='draw-history.html'">
+                    <div class="feature-icon">
+                        <i class="ph ph-chart-line-up"></i>
+                    </div>
+                    <h3 data-text="Features.History"></h3>
+                    <p data-text="Descriptions.History"></p>
+                </div>
+
+                <!-- Tốc độ ưu tiên -->
+                <div class="glass-card feature-card" onclick="location.href='speed-priority.html'">
+                    <div class="feature-icon">
+                        <i class="ph ph-lightning"></i>
+                    </div>
+                    <h3 data-text="Features.Speed"></h3>
+                    <p data-text="Descriptions.Speed"></p>
+                </div>
+
+                <!-- Tối ưu bao -->
+                <div class="glass-card feature-card" onclick="location.href='smart-wheel.html'">
+                    <div class="feature-icon">
+                        <i class="ph ph-circles-three-plus"></i>
+                    </div>
+                    <h3 data-text="Features.SmartWheel"></h3>
+                    <p data-text="Descriptions.SmartWheel"></p>
+                </div>
+
+                <!-- Quản lý bộ số -->
+                <div class="glass-card feature-card" onclick="location.href='personal-numbers.html'">
+                    <div class="feature-icon">
+                        <i class="ph ph-folder-star"></i>
+                    </div>
+                    <h3 data-text="Features.Management"></h3>
+                    <p data-text="Descriptions.Management"></p>
+                </div>
+
+                <!-- Cá nhân hóa -->
+                <div class="glass-card feature-card" onclick="location.href='personalization.html'">
+                    <div class="feature-icon">
+                        <i class="ph ph-user-focus"></i>
+                    </div>
+                    <h3 data-text="Features.Personalization"></h3>
+                    <p data-text="Descriptions.Personalization"></p>
+                </div>
+
+                <!-- FAB -->
+                <div class="glass-card feature-card" onclick="location.href='fab-features.html'">
+                    <div class="feature-icon">
+                        <i class="ph ph-plus-circle"></i>
+                    </div>
+                    <h3 data-text="Features.FAB"></h3>
+                    <p data-text="Descriptions.FAB"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="shared.js"></script>
+</body>
+</html>

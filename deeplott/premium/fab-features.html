@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính năng FAB - Premium Wiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="main-wrapper">
+        <header>
+            <button class="menu-toggle">
+                <i class="ph ph-list"></i>
+            </button>
+            <div class="premium-badge">Quick Actions</div>
+        </header>
+
+        <section class="detail-header">
+            <h1 data-text="Features.FAB"></h1>
+            <p class="hero-text">Nút hành động nổi (FAB) mang đến sự tiện lợi tối đa, cho phép bạn thực hiện các tác vụ
+                phức tạp chỉ với một chạm.</p>
+        </section>
+
+        <div class="glass-card">
+            <h2 class="section-title">Nhập liệu đa phương thức</h2>
+            <p>Tiết kiệm thời gian với các công cụ nhập liệu thông minh tích hợp ngay trong tầm tay.</p>
+
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    <img src="screenshot/fab.png">
+                </div>
+            </div>
+
+            <div style=" margin-top: 2rem; display: flex; flex-direction: column; gap: 20px;">
+                <div class="glass-card feature-card"
+                    style="display: flex; align-items: center; gap: 20px; padding: 1rem;">
+                    <div class="feature-icon" style="margin-bottom: 0; background: rgba(136, 192, 208, 0.15)">
+                        <i class="ph ph-scan" style="font-size: 1.5rem"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.1rem">Quét vé giấy (OCR)</h3>
+                        <p style="font-size: 0.85rem">Sử dụng camera để nhận diện và lưu bộ số từ vé thật chỉ trong
+                            1
+                            giây.</p>
+                    </div>
+                </div>
+                <div class="glass-card feature-card"
+                    style="display: flex; align-items: center; gap: 20px; padding: 1rem;">
+                    <div class="feature-icon" style="margin-bottom: 0; background: rgba(136, 192, 208, 0.15)">
+                        <i class="ph ph-file-arrow-up" style="font-size: 1.5rem"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.1rem">Import hàng loạt</h3>
+                        <p style="font-size: 0.85rem">Dán danh sách hàng trăm bộ số từ clipboard hoặc file text cực
+                            nhanh.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <h2 class="section-title">Phân tích đa nhiệm</h2>
+            <p>Vừa soi phân tích các biểu đồ chuyên sâu, bạn vừa có thể nhấn FAB để nhập ngay bộ số yêu thích mà
+                không
+                cần chuyển màn hình.</p>
+
+            <div
+                style="margin-top: 2rem; position: relative; height: 150px; background: rgba(0,0,0,0.2); border-radius: 20px; border: 1px dashed var(--glass-border); overflow: hidden;">
+                <!-- Mockup graph background -->
+                <div
+                    style="position: absolute; width: 100%; height: 100%; opacity: 0.3; display: flex; align-items: flex-end; padding: 10px; gap: 5px;">
+                    <div style="height: 40%; width: 20px; background: var(--nord8)"></div>
+                    <div style="height: 70%; width: 20px; background: var(--nord8)"></div>
+                    <div style="height: 50%; width: 20px; background: var(--nord8)"></div>
+                    <div style="height: 90%; width: 20px; background: var(--nord8)"></div>
+                    <div style="height: 60%; width: 20px; background: var(--nord8)"></div>
+                </div>
+                <!-- FAB Mockup -->
+                <div
+                    style="position: absolute; bottom: 20px; right: 20px; width: 50px; height: 50px; background: var(--nord8); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.5); color: var(--nord0); animation: bounce 2s infinite">
+                    <i class="ph ph-plus" style="font-size: 24px"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+
+    <script src="shared.js"></script>
+</body>
+
+</html>

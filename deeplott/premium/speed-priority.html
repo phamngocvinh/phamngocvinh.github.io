@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tốc độ & Băng thông - Premium Wiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="main-wrapper">
+        <header>
+            <button class="menu-toggle">
+                <i class="ph ph-list"></i>
+            </button>
+            <div class="premium-badge">Priority Access</div>
+        </header>
+
+        <section class="detail-header">
+            <h1 data-text="Features.Speed"></h1>
+            <p class="hero-text">Trải nghiệm sự mượt mà tuyệt đối. Yêu cầu của bạn luôn được xử lý đầu tiên trên hệ
+                thống server hiệu năng cao.</p>
+        </section>
+
+        <div class="glass-card">
+            <h2 class="section-title">Băng thông không giới hạn</h2>
+            <p>Người dùng miễn phí thường phải chờ đợi giữa các lần Kiểm tra chất lượng hoặc Gợi ý bộ số. Với Premium,
+                rào cản này hoàn toàn biến mất.</p>
+
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    <img src="screenshot/tool.png">
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; display: flex; align-items: center; gap: 20px;">
+                <div
+                    style="flex: 1; height: 10px; background: rgba(236, 239, 244, 0.1); border-radius: 5px; overflow: hidden;">
+                    <div style="width: 100%; height: 100%; background: var(--nord14); animation: pulse 2s infinite">
+                    </div>
+                </div>
+                <span style="color: var(--nord14); font-weight: bold;">100% Unlimited</span>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                <div class="feature-icon" style="background: rgba(163, 190, 140, 0.1); flex-shrink: 0;">
+                    <i class="ph ph-cpu" style="color: var(--nord14)"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Ưu tiên xử lý Server</h2>
+                    <p>Khi có hàng ngàn người dùng cùng truy cập, yêu cầu từ tài khoản Premium sẽ được đưa vào hàng đợi
+                        ưu tiên (Priority Queue). Thời gian phản hồi giảm đến 70% so với tài khoản thường.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card" style="background: rgba(191, 97, 106, 0.1); border-color: var(--nord11)">
+            <p style="color: var(--nord11); font-size: 0.9rem;">* Lưu ý: Tốc độ thực tế có thể phụ thuộc vào kết nối
+                mạng của thiết bị, nhưng phía server luôn cam kết tài nguyên tối đa cho bạn.</p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes pulse {
+            0% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+
+    <script src="shared.js"></script>
+</body>
+
+</html>
